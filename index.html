@@ -693,7 +693,7 @@ if (searchInput) {
       <div class="admin-stat-grid" id="adm-stats"><div class="loading"><div class="spinner"></div></div></div>
     </div>
     <div class="admin-sec" id="adm-sources"><div id="adm-src-con"><div class="loading"><div class="spinner"></div></div></div></div>
-    <div class="admin-sec" id="adm-users"><div class="empty"><div class="empty-icon">ðŸ”</div><h3>User management</h3><p>Manage users directly in the Supabase dashboard.</p></div></div>
+    <div class="admin-sec" id="adm-users"><div class="rf-empty-state"><h3>User management</h3><p>User records are managed via the operational database. <a href="https://supabase.com/dashboard" target="_blank" rel="noopener" style="color:var(--accent)">Open dashboard ↗</a></p></div></div>
   </div>
 </div>
 
@@ -745,9 +745,9 @@ function updateNav(){
     $('nav-auth').innerHTML='<div class="nav-user-wrap" id="nav-user-wrap">'
       +'<button class="nav-av-btn" onclick="togNavDD()" title="'+(CU.name||CU.email||'Account')+'">'+letter+'</button>'
       +'<div class="nav-dropdown" id="nav-dd">'
-      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'profile\')">ðŸ‘¤ My Profile</button>'
-      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'saved\')">ðŸ”– Saved Jobs</button>'
-      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'tracker\')">ðŸ“‹ Applications</button>'
+      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'profile\')">My Profile</button>'
+      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'saved\')">Saved roles</button>'
+      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'tracker\')">Applications</button>'
       +'<div class="nav-dd-divider"></div>'
       +'<div class="nav-dd-section">Settings</div>'
       +'<div class="nav-dd-row" onclick="togNotif()">'
@@ -834,7 +834,7 @@ async function submitAuth(){
     tok=res.data.session.access_token; CU=res.data.user;
     localStorage.setItem('_jc_tok',tok);
     localStorage.setItem('_jc_user',JSON.stringify(CU));
-    closeModal(); updateNav(); toast('Welcome! ðŸ‘‹'); loadSavedIds();
+    closeModal(); updateNav(); toast('Welcome back.'); loadSavedIds();
   } catch(e){ err.textContent=e.message; err.classList.add('show'); }
   finally{ $('m-submit').disabled=false; renderModal(); }
 }
@@ -850,7 +850,7 @@ async function loadHome(){
     var s=await api('/api/stats');
     if(s.success){ $('stat-total').textContent=(s.data.totalJobs||0).toLocaleString(); $('stat-remote').textContent=(s.data.remoteJobs||0).toLocaleString(); }
     var j=await api('/api/jobs?limit=6');
-    $('home-jobs').innerHTML=(j.success&&j.data.length)?j.data.map(jobCardHtml).join(''):'<div class="empty"><div class="empty-icon">ðŸ”</div><h3>No jobs yet</h3></div>';
+    $('home-jobs').innerHTML=(j.success&&j.data.length)?j.data.map(jobCardHtml).join(''):'<div class="rf-empty-state"><h3>Talent network is syncing</h3><p>Operational listings are being updated. Check back shortly.</p></div>';
   } catch(e){ $('home-jobs').innerHTML='<div class="rf-empty-state"><h3>Refreshing Talent Network</h3><p>We are updating our operational listings. Please check back shortly.</p></div>'; }
 }
 function heroSearch(){ $('s-kw').value=$('h-kw').value.trim(); go('search'); }
@@ -864,7 +864,7 @@ function jobCardHtml(j){
     +'<div class="card-top"><div class="av">'+ini(j.company)+'</div>'
     +'<div><div class="card-title">'+esc(j.title)+'</div><div class="card-company">'+esc(j.company||'Company')+'</div></div></div>'
     +'<div class="tags">'
-    +(j.city?'<span class="tag">ðŸ“ '+esc(j.city)+'</span>':'')
+    +(j.city?'<span class="tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-1px;margin-right:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'+esc(j.city)+'</span>':'')
     +(isR?'<span class="tag badge">Remote Operations</span>':'')
     +(j.employment_type?'<span class="tag">'+esc(j.employment_type)+'</span>':'')
     +(sal?'<span class="tag salary">'+sal+'</span>':'')
@@ -890,7 +890,7 @@ async function doSearch(){
   if(!d.success){ con.innerHTML='<div class="rf-empty-state"><h3>Refreshing Talent Network</h3><p>We are updating our operational listings. Please check back shortly.</p></div>'; return; }
   totPages=d.totalPages||1;
   if(meta){ meta.style.display='flex'; $('res-count').innerHTML='Showing <strong>'+d.data.length+'</strong> of <strong>'+(d.total||0).toLocaleString()+'</strong>'+(kw?' for "<strong>'+esc(kw)+'</strong>"':''); }
-  con.innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="empty"><div class="empty-icon">ðŸ”</div><h3>No Matching Opportunities</h3><p>Try broadening your search criteria.</p></div>';
+  con.innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="rf-empty-state"><h3>No matching roles</h3><p>Try adjusting your search — or browse all open positions.</p><button class="outline-btn" onclick="$(\'s-kw\').value=\'\';doSearch()" style="margin-top:1rem">View all roles</button></div>';
   renderPg();
 }
 async function loadJobsPage(pg){
@@ -1007,10 +1007,10 @@ function detailHtml(j){
   h+='<div class="detail-title">'+esc(j.title)+'</div>';
   h+='<div class="detail-co">'+esc(j.company||'Company')+(j.location?' Â· '+esc(j.location):'')+'</div>';
   h+='<div class="detail-tags">';
-  if(j.city) h+='<span class="detail-tag">ðŸ“ '+esc(j.city)+'</span>';
+  if(j.city) h+='<span class="detail-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> '+esc(j.city)+'</span>';
   if(isR)    h+='<span class="detail-tag badge">Remote Operations Role</span>';
   if(j.employment_type) h+='<span class="detail-tag">'+esc(j.employment_type)+'</span>';
-  if(sal)    h+='<span class="detail-tag salary">ðŸ’° '+sal+'</span>';
+  if(sal)    h+='<span class="detail-tag salary">'+sal+'</span>';
   h+='<span class="detail-tag">ðŸ“… '+ago(j.posted_at)+'</span>';
   if(j.source&&j.source.name) h+='<span class="detail-tag">via '+esc(j.source.name)+'</span>';
   h+='</div><div class="detail-actions">';
