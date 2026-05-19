@@ -1089,7 +1089,7 @@ function renderTracker(){
   var counts={}; ST.forEach(function(s){ counts[s.k]=s.k==='all'?allApps.length:allApps.filter(function(a){ return a.status===s.k; }).length; });
   $('trk-tabs').innerHTML=ST.map(function(s){ return'<button class="status-tab'+(trkFilter===s.k?' active':'')+('" onclick="setTrkF(\''+s.k+'\')">')+s.l+(counts[s.k]>0?' ('+counts[s.k]+')':[])+'</button>'; }).join('');
   var fl=trkFilter==='all'?allApps:allApps.filter(function(a){ return a.status===trkFilter; });
-  if(!fl.length){ $('trk-con').innerHTML='<div class="empty"><div class="empty-icon">ðŸ“‹</div><h3>No applications</h3><p>Open a job and click "Track Application".</p></div>'; return; }
+  if(!fl.length){ $('trk-con').innerHTML='<div class="rf-empty-state"><h3>No applications</h3><p>Open a role and click Track Application.</p></div>'; return; }
   $('trk-con').innerHTML=fl.map(function(a){
     var st=ST.find(function(s){ return s.k===a.status; })||ST[1];
     return'<div class="app-card">'
@@ -1260,8 +1260,8 @@ function pubProfileHtml(p){
   h+=(complete?'&#10003; Profile 100% Complete':'Profile Ready')+'</div>';
   h+='<h1>'+esc(p.full_name||'Candidate')+'</h1>';
   h+='<div class="pub-contact">';
-  if(p.job_title) h+='ðŸ’¼ '+esc(p.job_title)+'<br/>';
-  if(p.location)  h+='ðŸ“ '+esc(p.location)+'<br/>';
+  if(p.job_title) h+=esc(p.job_title)+'<br/>';
+  if(p.location)  h+=esc(p.location)+'<br/>';
   h+='</div></div></div>';
 
   // Actions
@@ -1309,7 +1309,7 @@ function pubProfileHtml(p){
   }
 
   if(!hasSk&&!hasEx&&!hasEd){
-    h+='<div class="empty"><div class="empty-icon">ðŸ‘¤</div><h3>Profile in progress</h3><p>This candidate is still building their profile.</p></div>';
+    h+='<div class="rf-empty-state"><h3>Profile in progress</h3><p>This candidate is still building their profile.</p></div>';
   }
 
   if(p.bio){
