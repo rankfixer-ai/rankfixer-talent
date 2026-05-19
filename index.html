@@ -1386,7 +1386,7 @@ footer {
 
 <script>
 // â”€â”€ CONFIG â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-const API = 'https://jobcopilotph.vercel.app';
+const API = 'https://jobcopilot-api-zeuk.onrender.com';
 const LIMIT = 10;
 
 // â”€â”€ STATE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -1473,7 +1473,7 @@ function renderCard(job) {
     </div>
     <div class="job-card-actions">
       ${salary ? `<div><div class="job-salary">${salary}</div><div class="job-salary-label">per month</div></div>` : '<div></div>'}
-      <a href="https://jobcopilotph.vercel.app/jobs/${job.id}" target="_blank" rel="noopener" class="btn-view">View Role â†’</a>
+      <a href="https://jobs.rankfixer.co/#job/${job.id}" target="_blank" rel="noopener" class="btn-view">View Role â†’</a>
     </div>
   </article>`;
 }
@@ -1627,3 +1627,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
