@@ -1,1481 +1,1629 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RankFixer Talent — Structured Remote Roles</title>
-<meta name="description" content="Join a managed operational ecosystem with facility-based teams, redundant systems, and structured pathways. Curated remote roles built around reliability.">
-<meta property="og:title" content="RankFixer Talent — Structured Remote Roles">
-<meta property="og:description" content="Join a managed operational ecosystem with facility-based teams and structured pathways.">
-<meta property="og:url" content="https://jobs.rankfixer.co">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RankFixer Talent — Structured Remote Operations</title>
+<meta name="description" content="Curated operational roles within a managed remote workforce ecosystem. Facility-based teams, structured pathways, and continuity infrastructure built around reliability.">
+<meta property="og:title" content="RankFixer Talent — Structured Remote Operations">
+<meta property="og:description" content="Curated operational roles within a managed remote workforce ecosystem. Facility-based teams, structured pathways, and continuity infrastructure built around reliability.">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y99CJ20H4"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-9Y99CJ20H4');
+<meta property="og:url" content="https://jobs.rankfixer.co">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jobs.rankfixer.co">
 
-// Track engagement events
-document.addEventListener('click', function(e) {
-  var el = e.target.closest('.apply-btn');
-  if (el) { gtag('event', 'click_apply', { event_category: 'engagement' }); return; }
-  el = e.target.closest('.outline-btn');
-  if (el) {
-    if (el.textContent.includes('Save')) gtag('event', 'click_save', { event_category: 'engagement' });
-    if (el.textContent.includes('Track')) gtag('event', 'click_track', { event_category: 'engagement' });
-  }
-});
-// Track searches
-var searchInput = document.querySelector('.hero-search input, #search-input');
-if (searchInput) {
-  searchInput.closest('form')?.addEventListener('submit', function() {
-    gtag('event', 'search', { event_category: 'engagement', search_term: searchInput.value });
-  });
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:        #0E0E12;
+  --ink-soft:   #3A3A44;
+  --ink-muted:  #78787E;
+  --ink-faint:  #A8A8AE;
+  --canvas:     #F8F7F3;
+  --surface:    #FFFFFF;
+  --border:     #E2E0D8;
+  --border-soft:#ECEAE3;
+  --accent:     #0A3D2E;
+  --accent-mid: #145C44;
+  --accent-pale:#E8F3EE;
+  --accent-text:#0A3D2E;
+  --signal:     #1A4AB8;
+  --signal-pale:#EAF0FD;
+  --tag-bg:     #F0EFE9;
+  --ff-display: 'Newsreader', Georgia, serif;
+  --ff-body:    'IBM Plex Sans', system-ui, sans-serif;
+  --ff-mono:    'IBM Plex Mono', 'Courier New', monospace;
+  --r-sm:  4px;
+  --r-md:  6px;
+  --r-lg:  10px;
+  --nav-h: 60px;
+  --max:   1100px;
 }
-</script>
 
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(248,247,243,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.nav-logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo-mark svg { display: block; }
+.nav-logo-name {
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.nav-logo-sub {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 400;
+  margin-left: 2px;
+}
+.nav-divider { width: 1px; height: 18px; background: var(--border); margin: 0 20px; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+.nav-link {
+  padding: 6px 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-radius: var(--r-sm);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-link:hover { background: var(--border-soft); color: var(--ink); }
+.nav-link.active { color: var(--ink); font-weight: 500; }
+
+.nav-eco {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 16px;
+}
+.nav-eco-pill {
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-family: var(--ff-mono);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.nav-eco-pill:hover { border-color: var(--ink-faint); color: var(--ink-soft); }
+.nav-eco-pill.current {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.nav-actions { display: flex; align-items: center; gap: 8px; }
+.btn-ghost {
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-family: var(--ff-body);
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-ghost:hover { border-color: var(--ink-faint); color: var(--ink); }
+.btn-primary {
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-family: var(--ff-body);
+  color: #fff;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-primary:hover { background: var(--ink-soft); }
+
+/* ── LAYOUT ── */
+.page { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 0 72px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+}
+.hero-meta-dot {
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.hero-heading {
+  font-family: var(--ff-display);
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 680px;
+  margin-bottom: 20px;
+}
+.hero-heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 540px;
+  margin-bottom: 40px;
+}
+
+/* Search */
+.hero-search {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.hero-search:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(10,61,46,0.08);
+}
+.search-icon {
+  padding: 0 14px;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+.hero-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--ff-body);
+  font-size: 14.5px;
+  color: var(--ink);
+  background: transparent;
+  padding: 13px 0;
+}
+.hero-search input::placeholder { color: var(--ink-faint); }
+.search-sep { width: 1px; height: 24px; background: var(--border); flex-shrink: 0; }
+.search-select {
+  border: none;
+  outline: none;
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  background: transparent;
+  padding: 13px 14px;
+  cursor: pointer;
+  appearance: none;
+  min-width: 148px;
+}
+.search-btn {
+  padding: 10px 18px;
+  margin: 4px;
+  font-size: 13.5px;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.search-btn:hover { background: var(--accent-mid); }
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.hero-pill {
+  padding: 5px 12px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.hero-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-pale);
+}
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border-soft);
+}
+.stat-item { flex: 1; }
+.stat-item + .stat-item { border-left: 1px solid var(--border-soft); padding-left: 32px; }
+.stat-value {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--ff-mono);
+}
+
+/* ── ECOSYSTEM LAYER ── */
+.eco-section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+}
+.section-heading {
+  font-family: var(--ff-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  max-width: 560px;
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.eco-card {
+  background: var(--surface);
+  padding: 28px 28px 32px;
+  position: relative;
+}
+.eco-card-num {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.eco-card-layer {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.eco-card.current .eco-card-layer { color: var(--accent); }
+.eco-card:not(.current) .eco-card-layer { color: var(--ink-faint); }
+.eco-card-title {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.eco-card-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.eco-card-signals {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.eco-signal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.eco-signal-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.eco-card.current .eco-signal-dot { background: var(--accent); }
+.eco-card:not(.current) .eco-signal-dot { background: var(--border); }
+.eco-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: gap 0.15s;
+}
+.eco-card.current .eco-card-link { color: var(--accent); }
+.eco-card:not(.current) .eco-card-link { color: var(--ink-faint); pointer-events: none; }
+.eco-card.current { background: var(--surface); }
+.eco-card-current-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  padding: 3px 8px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  background: var(--accent-pale);
+  color: var(--accent-text);
+  border-radius: 20px;
+}
+
+/* ── PATHWAYS ── */
+.pathways-section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pathways-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 20px;
+}
+.view-all-link {
+  font-size: 13.5px;
+  color: var(--signal);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.view-all-link:hover { text-decoration: underline; }
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.pathway-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 22px 20px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.pathway-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.pathway-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-pale);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.pathway-icon svg { display: block; }
+.pathway-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.pathway-desc {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.pathway-count {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+/* ── INTELLIGENCE STRIP ── */
+.intelligence-strip {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.intel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-soft);
+}
+.intel-item {
+  background: var(--surface);
+  padding: 28px 28px;
+}
+.intel-num {
+  font-family: var(--ff-display);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.intel-label {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.intel-sub {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-family: var(--ff-mono);
+}
+
+/* ── OPPORTUNITIES ── */
+.opps-section {
+  padding: 72px 0 80px;
+}
+.opps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+.opps-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-family: var(--ff-body);
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--ink-faint); color: var(--ink); }
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.opps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+/* JOB CARD */
+.job-card {
+  background: var(--surface);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  transition: background 0.15s;
+}
+.job-card:hover { background: var(--canvas); }
+.job-card-main {}
+.job-card-company {
+  font-size: 11.5px;
+  font-family: var(--ff-mono);
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.job-card-title {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.job-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.job-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--ink-muted);
+}
+.job-meta-item svg { flex-shrink: 0; }
+.job-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.badge {
+  padding: 3px 9px;
+  font-size: 11px;
+  font-family: var(--ff-mono);
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.badge-operational {
+  background: var(--accent-pale);
+  color: var(--accent-text);
+}
+.badge-remote {
+  background: var(--signal-pale);
+  color: var(--signal);
+}
+.badge-ai {
+  background: #F3F0FF;
+  color: #5235B3;
+}
+.badge-managed {
+  background: #FEF6E0;
+  color: #7A5100;
+}
+.badge-type {
+  background: var(--tag-bg);
+  color: var(--ink-soft);
+}
+
+.job-card-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.job-salary {
+  font-family: var(--ff-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.job-salary-label {
+  font-size: 11px;
+  color: var(--ink-muted);
+  text-align: right;
+  margin-top: 2px;
+  font-family: var(--ff-mono);
+}
+.btn-view {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn-view:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-soft);
+}
+.pagination-info {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-family: var(--ff-mono);
+}
+.pagination-btns { display: flex; gap: 6px; }
+.page-btn {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.page-btn:hover { border-color: var(--ink-faint); color: var(--ink); }
+.page-btn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* ── TRUST SECTION ── */
+.trust-section {
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.trust-features { display: flex; flex-direction: column; gap: 0; }
+.trust-feature {
+  display: flex;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.trust-feature:first-child { padding-top: 0; }
+.trust-feature-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-pale);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.trust-feature-title {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.trust-feature-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.6);
+  padding: 56px 0 36px;
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 28px;
+}
+.footer-brand-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.footer-eco-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+}
+.footer-eco-link {
+  font-family: var(--ff-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  transition: color 0.15s;
+}
+.footer-eco-link:hover { color: rgba(255,255,255,0.7); }
+.footer-eco-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+}
+.footer-eco-dot.active { background: var(--accent-mid); }
+.footer-eco-dot.inactive { background: rgba(255,255,255,0.15); }
+
+.footer-col-title {
+  font-size: 11.5px;
+  font-family: var(--ff-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 14px;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-link {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-link:hover { color: rgba(255,255,255,0.9); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-copy {
+  font-size: 12.5px;
+  font-family: var(--ff-mono);
+  letter-spacing: 0.03em;
+}
+.footer-legal { display: flex; gap: 16px; }
+.footer-legal a {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+}
+.footer-legal a:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .eco-grid { grid-template-columns: 1fr; }
+  .pathways-grid { grid-template-columns: repeat(2, 1fr); }
+  .intel-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 680px) {
+  :root { --nav-h: 54px; }
+  .hero { padding: 48px 0 52px; }
+  .hero-heading { font-size: 34px; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .stat-item + .stat-item { border-left: none; padding-left: 0; border-top: 1px solid var(--border-soft); padding-top: 16px; }
+  .pathways-grid { grid-template-columns: 1fr; }
+  .intel-grid { grid-template-columns: 1fr; }
+  .job-card { grid-template-columns: 1fr; }
+  .job-card-actions { flex-direction: row; align-items: center; }
+  .footer-top { grid-template-columns: 1fr; }
+  .nav-eco { display: none; }
+  .nav-links { display: none; }
+}
+
+/* ── MISC ── */
+.sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+}
+.sep::before, .sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-soft);
+}
+</style>
 </head>
 <body>
 
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<!-- AUTH MODAL -->
-<div class="modal-ov" id="auth-modal">
-  <div class="modal">
-    <button class="modal-x" onclick="closeModal()">âœ•</button>
-    <h2 id="m-title">Welcome back.</h2>
-    <p class="modal-sub" id="m-sub">Don't have an account? <span onclick="switchMode()">Sign up free</span></p>
-    <div id="m-name-wrap" style="display:none">
-      <div class="f-field"><label class="f-label">Full Name</label><input class="f-input" id="m-name" placeholder="Juan dela Cruz" /></div>
-      <div class="f-field"><label class="f-label">I am a</label>
-        <select class="f-select" id="m-role">
-          <option value="job_seeker">Job Seeker</option>
-          <option value="employer">Employer / Recruiter</option>
-        </select>
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://jobs.rankfixer.co" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="1" y="1" width="5" height="5" rx="1" fill="white"/>
+          <rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.55"/>
+          <rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.55"/>
+          <rect x="8" y="8" width="5" height="5" rx="1" fill="white" opacity="0.3"/>
+        </svg>
       </div>
-    </div>
-    <div class="f-field"><label class="f-label">Email</label><input class="f-input" id="m-email" type="email" placeholder="you@email.com" /></div>
-    <div class="f-field"><label class="f-label">Password</label><input class="f-input" id="m-pass" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')submitAuth()" /></div>
-    <div class="f-error" id="m-error"></div>
-    <button class="f-submit" id="m-submit" onclick="submitAuth()">Sign In</button>
-  </div>
-</div>
+      <span class="nav-logo-name">RankFixer<span class="nav-logo-sub"> / Talent</span></span>
+    </a>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo" onclick="go('home')"><span style="font-weight:600;letter-spacing:-.02em">RankFixer</span><span style="font-weight:400;opacity:.55;font-size:.82em;letter-spacing:.01em;margin-left:3px">Talent</span></div>
-  <div class="nav-links">
-    <button class="nav-btn" id="nav-home" onclick="go('home')">Home</button>
-    <button class="nav-btn" id="nav-search" onclick="go('search')">Opportunities</button>
-    <button class="nav-btn" id="nav-saved"    onclick="go('saved')"    style="display:none">Saved</button>
-    <button class="nav-btn" id="nav-tracker"  onclick="go('tracker')"  style="display:none">Tracker</button>
-    <button class="nav-btn" id="nav-employer" onclick="go('employer')" style="display:none">Post Role</button>
-    <button class="nav-btn" id="nav-admin"    onclick="go('admin')"    style="display:none">Admin</button>
-  </div>
-  <div class="nav-auth" id="nav-auth">
-    <button class="nav-signin" onclick="openModal('login')">Sign In</button>
-    <button class="nav-signup" onclick="openModal('register')">Sign Up</button>
+    <div class="nav-divider"></div>
+
+    <div class="nav-links">
+      <a href="#opportunities" class="nav-link active">Opportunities</a>
+      <a href="#pathways" class="nav-link">Pathways</a>
+      <a href="#about" class="nav-link">About</a>
+    </div>
+
+    <div style="flex:1"></div>
+
+    <div class="nav-eco">
+      <a href="https://jobs.rankfixer.co" class="nav-eco-pill current">Sense</a>
+      <a href="https://ops.rankfixer.co" class="nav-eco-pill">Adapt</a>
+      <a href="https://rankfixer.co" class="nav-eco-pill">Deploy</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#signin" class="btn-ghost">Sign In</a>
+      <a href="#signup" class="btn-primary">Join Network</a>
+    </div>
   </div>
 </nav>
 
-<!-- â”€â”€ HOME â”€â”€ -->
-<div class="page" id="page-home">
-  <!-- OLD HERO REMOVED --><div style="display:none">
-    <div class="eyebrow">PH Philippines Job Board</div>
-    <h1>Find your next <em>great job</em><br/>in the Philippines</h1>
-    <p>Thousands of verified openings — BPO, tech, remote, and more.</p>
-    <div class="search-box">
-      <input id="h-kw" type="text" placeholder="Try: CSR, VA, remote, social media…" onkeydown="if(event.key==='Enter')heroSearch()" />
-      <button class="search-btn" onclick="heroSearch()">Search Jobs</button>
-    </div>
-    <div class="quick-tags">
-      <button class="quick-tag" onclick="qSearch('CSR')">CSR / BPO</button>
-      <button class="quick-tag" onclick="qSearch('Virtual Assistant')">Virtual Assistant</button>
-      <button class="quick-tag" onclick="qSearch('Remote')">Remote / WFH</button>
-      <button class="quick-tag" onclick="qSearch('Social Media')">Social Media</button>
-      <button class="quick-tag" onclick="qSearch('Developer')">Developer</button>
-      <button class="quick-tag" onclick="qSearch('Data Entry')">Data Entry</button>
-    </div>
-  </div>
-  <div class="rf-hero">
-  <h1>Structured Remote Roles Built Around Reliability</h1>
-  <p class="hero-subtext">Join a managed operational ecosystem with facility-based teams, redundant systems, and structured pathways — infrastructure that isolated freelancing simply cannot provide.</p>
-  <div class="search-wrapper">
-    <input id="h-kw" type="text" placeholder="Explore operational opportunities" onkeydown="if(event.key==='Enter')heroSearch()" />
-    <button onclick="heroSearch()">Search</button>
-  </div>
-  <div class="category-pills">
-    <span onclick="qSearch('Remote Operations')">Remote Operations</span>
-    <span onclick="qSearch('Client Support')">Client Support</span>
-    <span onclick="qSearch('Executive Assistance')">Executive Assistance</span>
-    <span onclick="qSearch('AI-Native Workflows')">AI-Native Workflows</span>
-    <span onclick="qSearch('Marketing Operations')">Marketing Operations</span>
-    <span onclick="qSearch('Administrative Support')">Administrative Support</span>
-  </div>
-</div>
-<div id="home-trust-bar" class="rf-trust-bar">
-  <span class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> 200-Seat Facility</span>
-  <span class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg> Dual ISP Redundancy</span>
-  <span class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Backup Power Systems</span>
-  <span class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> On-Site Management</span>
-</div>
-<div id="home-trust"></div>
+<!-- MAIN -->
+<main>
 
-<!-- Workforce Intelligence Layer -->
-<section class="rf-intelligence-section">
-  <h2>Built on Live Market Intelligence</h2>
-  <p class="section-subtext">
-    Every role listed here is a demand signal. Our operational training 
-    systems continuously analyze hiring patterns, salary movements, and 
-    skill requirements across the Philippine remote work market — so 
-    the talent you join is always prepared for what employers actually 
-    need right now.
-  </p>
-  <div class="rf-trust-grid">
-    <div class="rf-trust-card">
-      <div class="trust-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-        </svg>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="page">
+      <div class="hero-meta">
+        <span class="hero-meta-dot"></span>
+        Workforce Intelligence — Layer 1
       </div>
-      <h4>Real-Time Demand Sensing</h4>
-      <p>We track hiring velocity, role emergence, and skill shifts as they happen — not through periodic reports.</p>
-    </div>
-    <div class="rf-trust-card">
-      <div class="trust-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
-        </svg>
+      <h1 class="hero-heading">
+        Operational roles built around<br>
+        <em>structured reliability.</em>
+      </h1>
+      <p class="hero-sub">
+        Every opportunity on this platform is a curated signal from our operational intelligence system — not a scraped listing, not a volume feed. Structured remote roles within a managed facility ecosystem.
+      </p>
+
+      <div class="hero-search">
+        <div class="search-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <input type="text" placeholder="Search operational roles…" id="hero-search-input">
+        <div class="search-sep"></div>
+        <select class="search-select" id="hero-search-category">
+          <option value="">All Pathways</option>
+          <option value="remote-ops">Remote Operations</option>
+          <option value="client-support">Client Support</option>
+          <option value="ai-workflows">AI-Assisted Workflows</option>
+          <option value="marketing-ops">Marketing Operations</option>
+          <option value="exec-assist">Executive Assistance</option>
+          <option value="admin-support">Administrative Support</option>
+        </select>
+        <button class="search-btn" onclick="handleSearch()">Search Roles</button>
       </div>
-      <h4>Adaptive Training Systems</h4>
-      <p>Our curriculum evolves against live market data, not static assumptions about what employers want.</p>
-    </div>
-    <div class="rf-trust-card">
-      <div class="trust-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </svg>
+
+      <div class="hero-pills">
+        <a href="#" class="hero-pill" onclick="filterByCategory('remote-ops', event)">Remote Operations</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('client-support', event)">Client Support</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('ai-workflows', event)">AI-Assisted</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('marketing-ops', event)">Marketing Ops</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('exec-assist', event)">Executive Support</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('admin-support', event)">Administrative</a>
       </div>
-      <h4>Continuous Workforce Alignment</h4>
-      <p>When employer requirements shift, our operational readiness shifts with them — systematically, not reactively.</p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value" id="live-job-count">—</div>
+          <div class="stat-label">Live Roles</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">200</div>
+          <div class="stat-label">Seat Facility</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">Dual ISP</div>
+          <div class="stat-label">Redundancy</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">0 min</div>
+          <div class="stat-label">Avg Downtime</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">TESDA</div>
+          <div class="stat-label">Accredited</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section><div class="stats-bar">
-    <div class="stat"><span class="stat-num" id="stat-total">—</span><div class="stat-label">Active Roles</div></div>
-    <div class="stat"><span class="stat-num" id="stat-remote">—</span><div class="stat-label">Remote Operations</div></div>
-    <div class="stat"><span class="stat-num">200</span><div class="stat-label">Seat facility</div></div>
-  </div>
-  <div class="section">
-    <div class="section-hdr">
-      <h2 class="section-title">Current Opportunities</h2>
-      <button class="section-link" onclick="go('search')">View All Roles</button>
+  </section>
+
+  <!-- ECOSYSTEM ARCHITECTURE -->
+  <section class="eco-section" id="about">
+    <div class="page">
+      <div class="section-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="6" cy="6" r="2" fill="currentColor"/>
+        </svg>
+        Ecosystem Architecture
+      </div>
+      <h2 class="section-heading">One operational infrastructure.<br>Three coordinated layers.</h2>
+      <p class="section-sub">The RankFixer ecosystem is not a jobs board with branding. It is a structured workforce intelligence system where each layer informs and reinforces the others.</p>
+
+      <div class="eco-grid">
+        <!-- Layer 1 - Current -->
+        <div class="eco-card current">
+          <div class="eco-card-current-badge">Current Layer</div>
+          <div class="eco-card-num">01</div>
+          <div class="eco-card-layer">Sense</div>
+          <div class="eco-card-title">jobs.rankfixer.co</div>
+          <div class="eco-card-desc">Labor market telemetry. Every role here is a live demand signal — not a scraped aggregate. Hiring trends, skill emergence, and workforce intelligence in real time.</div>
+          <div class="eco-card-signals">
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Demand signal tracking</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Hiring velocity intelligence</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Operational pathway curation</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Skill requirement mapping</div>
+          </div>
+          <a href="https://jobs.rankfixer.co" class="eco-card-link">
+            You are here
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7m-3-3 3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- Layer 2 -->
+        <div class="eco-card">
+          <div class="eco-card-num">02</div>
+          <div class="eco-card-layer">Adapt</div>
+          <div class="eco-card-title">ops.rankfixer.co</div>
+          <div class="eco-card-desc">Workforce preparation infrastructure. AI-assisted SOPs, operational training, workflow systems, and continuity standards — calibrated against live market demand.</div>
+          <div class="eco-card-signals">
+            <div class="eco-signal"><div class="eco-signal-dot"></div>AI-assisted SOP development</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Operational training systems</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Workflow standards</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Continuity protocols</div>
+          </div>
+          <a href="https://ops.rankfixer.co" class="eco-card-link">
+            Coming Soon
+          </a>
+        </div>
+
+        <!-- Layer 3 -->
+        <div class="eco-card">
+          <div class="eco-card-num">03</div>
+          <div class="eco-card-layer">Deploy</div>
+          <div class="eco-card-title">rankfixer.co</div>
+          <div class="eco-card-desc">Managed staffing and operational deployment. 200-seat TESDA-accredited facility with on-site management, redundant infrastructure, and professional oversight.</div>
+          <div class="eco-card-signals">
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Managed operational teams</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Facility-based infrastructure</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>On-site oversight</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Business continuity</div>
+          </div>
+          <a href="https://rankfixer.co" class="eco-card-link">
+            Visit Deploy
+          </a>
+        </div>
+      </div>
     </div>
-    <div id="home-jobs" class="jobs-grid"><div class="loading"><div class="spinner"></div></div></div>
+  </section>
+
+  <!-- OPERATIONAL PATHWAYS -->
+  <section class="pathways-section" id="pathways">
+    <div class="page">
+      <div class="pathways-header">
+        <div>
+          <div class="section-tag">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L6 1l5 10H1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            Curated Operational Pathways
+          </div>
+          <h2 class="section-heading" style="margin-bottom:0">Structured roles by function.</h2>
+        </div>
+        <a href="#opportunities" class="view-all-link">View all opportunities →</a>
+      </div>
+
+      <div class="pathways-grid">
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('remote-ops', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="12" rx="2" stroke="#0A3D2E" stroke-width="1.4"/><path d="M6 15v2M12 15v2M4 17h10" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/><path d="M5 8h8M5 11h5" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pathway-title">Remote Operations</div>
+          <div class="pathway-desc">Workflow coordination, operational administration, and process management within structured team environments.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('client-support', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C5.13 2 2 5.13 2 9c0 1.55.47 3 1.27 4.21L2 16l2.79-1.27A6.95 6.95 0 0 0 9 16c3.87 0 7-3.13 7-7s-3.13-7-7-7z" stroke="#0A3D2E" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">Client Support</div>
+          <div class="pathway-desc">Structured communication roles with managed SLAs, documented escalation paths, and continuity standards.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('ai-workflows', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#0A3D2E" stroke-width="1.4"/><path d="M6 9l2 2 4-4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">AI-Assisted Workflows</div>
+          <div class="pathway-desc">Roles operating within AI-integrated systems — ChatGPT, Claude, Zapier — with structured training and operational oversight.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('marketing-ops', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 13L7 9l3 3 5-7" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">Marketing Operations</div>
+          <div class="pathway-desc">Content strategy, campaign coordination, social systems, and performance tracking within structured marketing workflows.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('exec-assist', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="2" width="12" height="14" rx="2" stroke="#0A3D2E" stroke-width="1.4"/><path d="M6 6h6M6 9h6M6 12h4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pathway-title">Executive Assistance</div>
+          <div class="pathway-desc">High-trust administrative support for principals — calendar, correspondence, research, and operational coordination.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('admin-support', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4h10v2H4zM4 8h10v2H4zM4 12h6v2H4z" stroke="#0A3D2E" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">Administrative Support</div>
+          <div class="pathway-desc">Data management, process administration, documentation, and operational support functions within managed team structures.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTELLIGENCE METRICS -->
+  <div class="intelligence-strip">
+    <div class="page">
+      <div class="intel-grid">
+        <div class="intel-item">
+          <div class="intel-num">Live</div>
+          <div class="intel-label">Demand signal tracking</div>
+          <div class="intel-sub">Roles updated in real time</div>
+        </div>
+        <div class="intel-item">
+          <div class="intel-num">200</div>
+          <div class="intel-label">Seat facility capacity</div>
+          <div class="intel-sub">Bislig City, Philippines</div>
+        </div>
+        <div class="intel-item">
+          <div class="intel-num">2×</div>
+          <div class="intel-label">ISP redundancy standard</div>
+          <div class="intel-sub">Dual fiber, auto-failover</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  </div><!-- â”€â”€ FAQ â”€â”€ -->
-  <div class="section" style="padding-top:0;padding-bottom:5rem">
-    <div class="section-hdr" style="margin-bottom:2rem">
-      <h2 class="section-title">Frequently asked questions</h2>
-    </div>
-    <div>
+  <!-- OPPORTUNITIES -->
+  <section class="opps-section" id="opportunities">
+    <div class="page">
+      <div class="opps-header">
+        <div>
+          <div class="section-tag">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="6" r="1.5" fill="currentColor"/></svg>
+            Current Opportunities
+          </div>
+          <h2 class="section-heading" style="margin-bottom:0;font-size:24px">Structured operational roles</h2>
+        </div>
+        <div class="opps-filters">
+          <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+          <button class="filter-btn" onclick="setFilter('remote-ops', this)">Remote Ops</button>
+          <button class="filter-btn" onclick="setFilter('client-support', this)">Client Support</button>
+          <button class="filter-btn" onclick="setFilter('ai-workflows', this)">AI Workflows</button>
+          <button class="filter-btn" onclick="setFilter('marketing-ops', this)">Marketing</button>
+        </div>
+      </div>
 
-      <!-- Tab switcher + accordion -->
+      <!-- Loading state -->
+      <div id="jobs-loading" style="padding:48px 0;text-align:center;color:var(--ink-muted);font-family:var(--ff-mono);font-size:13px;letter-spacing:0.04em;">
+        Loading roles…
+      </div>
+
+      <!-- Error state -->
+      <div id="jobs-error" style="display:none;padding:48px 0;text-align:center;">
+        <div style="font-size:14px;color:var(--danger);margin-bottom:8px;">Unable to load roles</div>
+        <div style="font-size:13px;color:var(--ink-muted);">Please try again in a moment.</div>
+        <button onclick="fetchJobs()" style="margin-top:16px;padding:8px 18px;background:var(--ink);color:#fff;border:none;border-radius:var(--r-sm);cursor:pointer;font-size:13px;font-family:var(--ff-body);">Retry</button>
+      </div>
+
+      <!-- Empty state -->
+      <div id="jobs-empty" style="display:none;padding:48px 0;text-align:center;">
+        <div style="font-size:14px;color:var(--ink-soft);margin-bottom:6px;">No roles match your search</div>
+        <div style="font-size:13px;color:var(--ink-muted);">Try a different keyword or clear filters.</div>
+      </div>
+
+      <div class="opps-grid" id="jobs-grid" style="display:none"></div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination" style="display:none">
+        <div class="pagination-info" id="pagination-info"></div>
+        <div class="pagination-btns" id="pagination-btns"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRASTRUCTURE TRUST SECTION -->
+  <section class="trust-section" id="infrastructure">
+    <div class="page">
+      <div class="trust-grid">
+        <div>
+          <div class="section-tag">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 4v4l5 3 5-3V4L6 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            Why This Ecosystem
+          </div>
+          <h2 class="section-heading">Infrastructure that isolated freelancing cannot provide.</h2>
+          <p class="section-sub">Joining a role in the RankFixer ecosystem means operating within a professionally managed environment — not a home office without support, accountability, or continuity.</p>
+          <a href="https://rankfixer.co" class="btn-primary" style="margin-top:8px;width:fit-content">
+            Learn About the Facility →
+          </a>
+        </div>
+
+        <div class="trust-features">
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#0A3D2E" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">200-Seat TESDA-Accredited Facility</div>
+              <div class="trust-feature-desc">A physical operational center in Bislig City with structured training, on-site management, and professional working environment — not isolated home offices.</div>
+            </div>
+          </div>
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">Dual ISP + Generator Redundancy</div>
+              <div class="trust-feature-desc">Two independent fiber connections with automatic failover. A backup generator bridges any power interruption. Zero downtime is not a promise — it is engineered infrastructure.</div>
+            </div>
+          </div>
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="2.5" stroke="#0A3D2E" stroke-width="1.4"/><path d="M3 13c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">On-Site Management and Accountability</div>
+              <div class="trust-feature-desc">Every team operates under structured on-site oversight. Attendance, productivity, and output quality are managed — not self-reported.</div>
+            </div>
+          </div>
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="#0A3D2E" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">AI-Integrated Operational Training</div>
+              <div class="trust-feature-desc">Every role operates within AI-integrated workflows as standard practice. Training is structured, accredited, and continuously updated against market demand.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
       <div>
-        <!-- Tab pills -->
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem" id="faq-tabs">
-          <button class="faq-tab-btn active" onclick="faqTab('seekers',this)">Job Seekers</button>
-          <button class="faq-tab-btn" onclick="faqTab('employers',this)">Employers</button>
-          <button class="faq-tab-btn" onclick="faqTab('account',this)">Account &amp; Profile</button>
+        <div class="footer-brand-name">RankFixer Talent</div>
+        <div class="footer-brand-desc">
+          Part of the RankFixer operational ecosystem — workforce intelligence, structured preparation, and professionally managed remote teams.
         </div>
-
-        <!-- Job Seekers -->
-        <div class="faq-group" id="faq-seekers">
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>What does "operationally structured" mean?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">It means our roles operate within a managed facility with redundant internet, backup power, on-site management, and AI-integrated workflows — not isolated home offices with no support structure.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>How is this different from freelance platforms?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Freelance platforms connect you with clients but provide no infrastructure, no management support, and no operational continuity. At RankFixer, you are part of a structured team operating from a professional facility.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>What communication standards are expected?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Our teams follow structured communication protocols — consistent availability during operational hours, documented handovers, and managed workflow systems. Reliability is non-negotiable.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>Do I need AI tool experience?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Familiarity with tools like ChatGPT and Claude is valued, but we provide structured training. Every role in our network operates within AI-integrated workflows as standard practice.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>Where is the facility located?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Our 200-seat TESDA-accredited center is in Bislig City, Philippines — equipped with dual ISP fiber, backup generators, and on-site operational management.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>How do I save jobs to review later?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Click the bookmark icon on any listing while browsing. All saved roles appear under the Saved tab in your account. You need to be signed in for this feature to work.</div>
-          </div>
-        </div>
-
-        <!-- Employers -->
-        <div class="faq-group" id="faq-employers" style="display:none">
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>What types of roles are available?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">We offer structured remote roles across client support, executive assistance, marketing operations, administrative support, and AI-native workflow positions. Each role operates within a managed facility environment.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>What information do I need to post a job?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">You'll need a job title, company name, work setup (on-site, remote, or hybrid), employment type, and a job description. Salary range and an external application URL are optional but recommended.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>Can I edit or remove a job posting after publishing?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Yes. Manage all your active listings from the Your Postings section in your employer dashboard. You can update details or delete a listing once the position has been filled.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>What types of candidates will I reach?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Job Copilot PH focuses on the Philippine talent market — BPO, customer service, tech, virtual assistant, and administrative roles. A significant share of candidates are actively seeking remote and WFH opportunities.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>How do applicants apply through my listing?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Each listing has a unique shareable URL. If you provide an external application link, candidates are redirected there to complete their application — keeping you in full control of the hiring process.</div>
-          </div>
-        </div>
-
-        <!-- Account & Profile -->
-        <div class="faq-group" id="faq-account" style="display:none">
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>How do I create an account?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Click Sign Up at the top of the page, choose Job Seeker or Employer / Recruiter, then enter your name, email, and password. It's free and takes under a minute.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>How do I set up my job seeker profile?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">After signing in go to My Profile. You can add your professional identity, bio, skills with proficiency ratings, work experience, education, and upload your resume as a PDF. A complete profile helps employers find and evaluate you faster.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>Can employers see my profile publicly?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">Yes — your profile has a public URL where employers can view your bio, skills, experience, education, and download your uploaded resume PDF. Changes you save appear on your public profile immediately.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faqToggle(this)">
-              <span>What work setup preferences can I set?</span>
-              <span class="faq-chevron">&#8964;</span>
-            </button>
-            <div class="faq-a">You can set your availability to Full Remote (Home-based), Hybrid, or On-site Only. This lets employers immediately see what arrangement you're open to, improving your match quality.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- â”€â”€ CONTACT â”€â”€ -->
-  <div class="section contact-section">
-    <div class="contact-grid">
-
-      <!-- Info panel -->
-      <div class="contact-info">
-        <div class="eyebrow" style="margin-bottom:1.25rem">Get in touch</div>
-        <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;margin-bottom:1rem">We'd love to<br/><em style="font-style:italic;color:var(--accent)">hear from you.</em></h2>
-        <p style="color:var(--text-sub);font-size:.92rem;line-height:1.75;margin-bottom:2rem">Whether you are exploring a role or building a structured remote team, we respond within one business day.</p>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div class="contact-meta-item">
-            <div class="contact-meta-icon">&#9993;</div>
-            <div>
-              <div class="contact-meta-label">Email us directly</div>
-              <div class="contact-meta-val">info@rankfixer.co</div>
-            </div>
-          </div>
-          <div class="contact-meta-item">
-            <div class="contact-meta-icon">â±</div>
-            <div>
-              <div class="contact-meta-label">Response time</div>
-              <div class="contact-meta-val">Within 1 business day</div>
-            </div>
-          </div>
-          <div class="contact-meta-item">
-            <div class="contact-meta-icon">PH</div>
-            <div>
-              <div class="contact-meta-label">Based in</div>
-              <div class="contact-meta-val">Philippines (PHT, UTC+8)</div>
-            </div>
-          </div>
+        <div class="footer-eco-links">
+          <a href="https://jobs.rankfixer.co" class="footer-eco-link">
+            <span class="footer-eco-dot active"></span>
+            Sense — jobs.rankfixer.co
+          </a>
+          <a href="https://ops.rankfixer.co" class="footer-eco-link">
+            <span class="footer-eco-dot inactive"></span>
+            Adapt — ops.rankfixer.co
+          </a>
+          <a href="https://rankfixer.co" class="footer-eco-link">
+            <span class="footer-eco-dot inactive"></span>
+            Deploy — rankfixer.co
+          </a>
         </div>
       </div>
 
-      <!-- Form card -->
-      <div class="contact-card" id="contact-card">
-
-        <!-- Form state -->
-        <div id="contact-form-body">
-          <div class="contact-row">
-            <div class="f-field" style="margin:0">
-              <label class="f-label">Full name</label>
-              <input class="f-input" id="cf-name" placeholder="Juan dela Cruz" />
-            </div>
-            <div class="f-field" style="margin:0">
-              <label class="f-label">Email address</label>
-              <input class="f-input" id="cf-email" type="email" placeholder="you@email.com" />
-            </div>
-          </div>
-          <div class="f-field" style="margin-bottom:14px">
-            <label class="f-label">Subject</label>
-            <select class="f-select" id="cf-subject">
-              <option value="">Select a topic…</option>
-              <option value="General inquiry">General inquiry</option>
-              <option value="Job seeker support">Job seeker support</option>
-              <option value="Employer support">Employer support</option>
-              <option value="Report a bug">Report a bug</option>
-              <option value="Partnership / advertising">Partnership / advertising</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="f-field" style="margin-bottom:6px">
-            <label class="f-label">Message</label>
-            <textarea class="f-textarea" id="cf-message" placeholder="Tell us how we can help…" style="min-height:120px;resize:vertical"></textarea>
-          </div>
-          <div class="f-error" id="cf-error"></div>
-          <button class="f-submit" id="cf-submit" onclick="submitContact()" style="margin-top:14px">Send message</button>
-        </div>
-
-        <!-- Success state -->
-        <div id="contact-success" style="display:none;text-align:center;padding:2.5rem 1rem">
-          <div style="width:52px;height:52px;border-radius:50%;background:var(--remote-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.4rem">&#10003;</div>
-          <h3 style="font-family:var(--font-d);font-size:1.4rem;font-weight:500;margin-bottom:.5rem">Message sent!</h3>
-          <p style="color:var(--text-sub);font-size:.9rem">Thanks for reaching out. We'll reply within one business day.</p>
-          <button class="outline-btn" onclick="resetContact()" style="margin-top:1.5rem;font-size:.85rem;padding:.6rem 1.5rem">Send another</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- â”€â”€ FOOTER â”€â”€ -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-
-        <!-- Brand -->
-        <div class="footer-brand">
-          <div class="nav-logo" onclick="go('home')" style="cursor:pointer"><span style="font-weight:600;letter-spacing:-.02em">RankFixer</span><span style="font-weight:400;opacity:.55;font-size:.82em;letter-spacing:.01em;margin-left:3px">Talent</span></div>
-          <p class="footer-tagline">RankFixer Talent is Layer 1 of the RankFixer ecosystem — tracking market demand, preparing structured talent, and deploying managed remote teams. <a href="https://rankfixer.co" target="_blank" rel="noopener" style="color:inherit;opacity:.7;text-decoration:underline;text-underline-offset:3px">rankfixer.co ↗</a></p>
-        </div>
-        </div>
-
-        <!-- Talent Network -->
-        <div>
-          <div class="footer-col-title">Talent Network</div>
-          <ul class="footer-links">
-            <li><button onclick="go('home')">Opportunities</button></li>
-            <li><button onclick="go('search')">Browse Roles</button></li>
-            <li><button onclick="go('employer')">Post a Role</button></li>
-            <li><button onclick="openModal('register')">Create Account</button></li>
-            <li><button onclick="openModal('login')">Sign In</button></li>
-          </ul>
-        </div>
-
-        <!-- Operational Structure -->
-        <div>
-          <div class="footer-col-title">Operational Structure</div>
-          <ul class="footer-links">
-            <li><a href="/operations" onclick="event.preventDefault();go('home')">Remote Operations</a></li>
-            <li><a href="/operations/client-support" onclick="event.preventDefault();go('home')">Client Support</a></li>
-            <li><a href="/operations/ai-workflows" onclick="event.preventDefault();go('home')">AI-Assisted Operations</a></li>
-            <li><a href="/operations/marketing" onclick="event.preventDefault();go('home')">Marketing Operations</a></li>
-            <li><a href="/operations/admin-support" onclick="event.preventDefault();go('home')">Administrative Support</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <div class="footer-col-title">Contact</div>
-          <div class="footer-contact-item">
-            <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div>
-              <div class="footer-contact-label">Email</div>
-              <a href="mailto:info@rankfixer.co" class="footer-contact-val">info@rankfixer.co</a>
-            </div>
-          </div>
-          <div class="footer-contact-item">
-            <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div>
-              <div class="footer-contact-label">Response time</div>
-              <div class="footer-contact-val">Within 1 business day</div>
-            </div>
-          </div>
-          <div class="footer-contact-item">
-            <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-            <div>
-              <div class="footer-contact-label">Based in</div>
-              <div class="footer-contact-val">Philippines (PHT, UTC+8)</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom bar -->
-      <div class="footer-bottom">
-        <span class="footer-copy">RankFixer Talent &mdash; Workforce Intelligence Layer &mdash; <a href="https://rankfixer.co" target="_blank" rel="noopener" style="color:inherit;opacity:.65">rankfixer.co</a></span>
-        <div class="footer-legal">
-          <a href="/privacy" onclick="event.preventDefault();go('home')">Privacy Policy</a>
-          <a href="/terms" onclick="event.preventDefault();go('home')">Terms of Use</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-</div>
-
-<!-- â”€â”€ SEARCH â”€â”€ -->
-<div class="page" id="page-search">
-  <div class="search-page">
-    <div class="toolbar">
-      <div class="toolbar-wrap">
-        <input class="toolbar-input" id="s-kw" placeholder="Search operational opportunities..." oninput="fetchSug(this.value)" onkeydown="if(event.key==='Enter')doSearch()" style="width:100%" />
-        <div class="suggest-drop" id="sug-box"></div>
-      </div>
-      <input class="toolbar-input" id="s-city" placeholder="City (e.g. Davao, Manila)" onkeydown="if(event.key==='Enter')doSearch()" style="max-width:180px" />
-      <label class="remote-label"><div class="toggle" id="rem-tog" onclick="togRem()"></div>Remote Operations</label>
-      <button class="toolbar-btn" onclick="doSearch()">Search</button>
-    </div>
-    <div class="results-meta" id="res-meta" style="display:none"><span id="res-count"></span></div>
-    <div id="jobs-con"><div class="loading"><div class="spinner"></div></div></div>
-    <div class="pagination" id="pg"></div>
-  </div>
-</div>
-
-<!-- â”€â”€ JOB DETAIL â”€â”€ -->
-<div class="page" id="page-detail">
-  <div class="detail-wrap">
-    <button class="back-btn" onclick="goBack()">â† Back</button>
-    <div id="detail-con"><div class="loading"><div class="spinner"></div></div></div>
-  </div>
-</div>
-
-<!-- â”€â”€ SAVED â”€â”€ -->
-<div class="page" id="page-saved">
-  <div class="saved-page">
-    <div class="section-hdr"><h2 class="section-title">Saved Jobs</h2></div>
-    <div id="saved-con"><div class="loading"><div class="spinner"></div></div></div>
-  </div>
-</div>
-
-<!-- â”€â”€ TRACKER â”€â”€ -->
-<div class="page" id="page-tracker">
-  <div class="tracker-page">
-    <div class="section-hdr"><h2 class="section-title">Application Tracker</h2></div>
-    <div class="status-tabs" id="trk-tabs"></div>
-    <div id="trk-con"><div class="loading"><div class="spinner"></div></div></div>
-  </div>
-</div>
-
-<!-- â”€â”€ UPDATE PROFILE â”€â”€ -->
-<div class="page" id="page-profile">
-  <div class="profile-edit-page">
-    <div class="profile-edit-hdr">
-      <h2>My Profile</h2>
-      <div class="strength-badge partial" id="strength-badge">Building profile…</div>
-    </div>
-
-    <!-- Identity -->
-    <div class="profile-block">
-      <div class="block-label">Professional Identity</div>
-      <div class="f-row">
-        <div><label class="f-label">Full Name</label><input class="f-input" id="p-name" placeholder="Juan dela Cruz" /></div>
-        <div><label class="f-label">LinkedIn URL</label><input class="f-input" id="p-linkedin" type="url" placeholder="https://linkedin.com/in/username" /></div>
-      </div>
-      <div class="f-row">
-        <div><label class="f-label">Email</label><input class="f-input" id="p-email" readonly style="opacity:.6" /></div>
-        <div><label class="f-label">Mobile</label><input class="f-input" id="p-phone" placeholder="+63 9XX XXX XXXX" /></div>
-      </div>
-      <div class="f-row">
-        <div><label class="f-label">Looking for</label><input class="f-input" id="p-jobtitle" placeholder="Virtual Assistant, CSR…" /></div>
-        <div><label class="f-label">Location</label><input class="f-input" id="p-location" placeholder="Davao City" /></div>
-      </div>
-      <div class="f-row">
-        <div class="full"><label class="f-label">Availability</label>
-          <select class="f-select" id="p-avail">
-            <option value="">Select…</option>
-            <option value="remote">Full Remote (Home-based)</option>
-            <option value="hybrid">Hybrid</option>
-            <option value="onsite">On-site Only</option>
-          </select>
-        </div>
-      </div>
-      <div class="f-row">
-        <div class="full"><label class="f-label">Bio</label><textarea class="f-textarea" id="p-bio" placeholder="Brief intro about yourself…" style="min-height:80px"></textarea></div>
-      </div>
-    </div>
-
-    <!-- Skills -->
-    <div class="profile-block">
-      <div class="block-label">Skills & Expertise</div>
-      <span class="helper">Rate your proficiency: 1 star = Beginner, 5 stars = Expert</span>
-      <div id="skills-list"></div>
-      <div style="display:flex;gap:10px;margin-bottom:.75rem">
-        <input class="f-input" id="new-skill" placeholder="Skill name (e.g. PostgreSQL)" style="margin-bottom:0;flex:1" />
-        <div class="star-row" id="new-skill-stars">
-          <span class="star on" data-v="1" onclick="setNewSkillStar(1)">&#9733;</span>
-          <span class="star on" data-v="2" onclick="setNewSkillStar(2)">&#9733;</span>
-          <span class="star on" data-v="3" onclick="setNewSkillStar(3)">&#9733;</span>
-          <span class="star" data-v="4" onclick="setNewSkillStar(4)">&#9733;</span>
-          <span class="star" data-v="5" onclick="setNewSkillStar(5)">&#9733;</span>
-        </div>
-      </div>
-      <button class="add-btn" onclick="addSkill()">+ Add Skill</button>
-    </div>
-
-    <!-- Experience -->
-    <div class="profile-block">
-      <div class="block-label">Work Experience</div>
-      <div id="exp-list"></div>
-      <div class="nested-item" id="new-exp-form" style="display:none">
-        <div class="f-row"><div><label class="f-label">Job Title</label><input class="f-input" id="ne-title" placeholder="e.g. Virtual Assistant" /></div><div><label class="f-label">Company</label><input class="f-input" id="ne-company" placeholder="Company name" /></div></div>
-        <div class="f-row"><div><label class="f-label">Start Date</label><input class="f-input" id="ne-start" type="month" /></div><div><label class="f-label">End Date</label><input class="f-input" id="ne-end" type="month" placeholder="Leave blank if current" /></div></div>
-        <div style="display:flex;gap:8px">
-          <button class="toolbar-btn" onclick="saveExp()">Save</button>
-          <button class="emp-btn" onclick="document.getElementById('new-exp-form').style.display='none'">Cancel</button>
-        </div>
-      </div>
-      <button class="add-btn" onclick="document.getElementById('new-exp-form').style.display='block'">+ Add Experience</button>
-    </div>
-
-    <!-- Education -->
-    <div class="profile-block">
-      <div class="block-label">Education</div>
-      <div id="edu-list"></div>
-      <div class="nested-item" id="new-edu-form" style="display:none">
-        <div class="f-row">
-          <div><label class="f-label">School</label><input class="f-input" id="ne-school" list="ph-schools" placeholder="Start typing school name…" /></div>
-          <div><label class="f-label">Degree</label><input class="f-input" id="ne-degree" placeholder="e.g. BS Information Technology" /></div>
-        </div>
-        <datalist id="ph-schools">
-          <option value="Ateneo de Davao University" /><option value="De La Salle University" />
-          <option value="University of Mindanao" /><option value="University of the Philippines" />
-          <option value="University of Santo Tomas" /><option value="Silliman University" />
-          <option value="Mapua University" /><option value="Far Eastern University" />
-        </datalist>
-        <div class="f-row"><div><label class="f-label">Graduation Year</label><input class="f-input" id="ne-year" type="number" placeholder="2020" min="1950" max="2030" /></div></div>
-        <div style="display:flex;gap:8px">
-          <button class="toolbar-btn" onclick="saveEdu()">Save</button>
-          <button class="emp-btn" onclick="document.getElementById('new-edu-form').style.display='none'">Cancel</button>
-        </div>
-      </div>
-      <button class="add-btn" onclick="document.getElementById('new-edu-form').style.display='block'">+ Add Education</button>
-    </div>
-
-    <!-- Resume -->
-    <div class="profile-block">
-      <div class="block-label">Resume / CV</div>
-      <span class="helper">Upload your resume PDF so employers can download it from your public profile.</span>
-      <input class="f-input" id="p-resume-url" placeholder="Paste a URL to your resume PDF (e.g. Google Drive link)" />
-    </div>
-
-    <button class="prof-save-btn" onclick="saveProfile()">Save Profile Changes</button>
-    <p style="text-align:center;font-size:.78rem;color:var(--text-muted);margin-top:.75rem">Changes are reflected on your public profile immediately.</p>
-    <div style="text-align:center;margin-top:1.5rem">
-      <button class="section-link" onclick="doLogout()">Sign Out â†’</button>
-    </div>
-  </div>
-</div>
-
-<!-- â”€â”€ PUBLIC PROFILE â”€â”€ -->
-<div class="page" id="page-pub-profile">
-  <div class="pub-profile-wrap">
-    <button class="back-btn" onclick="goBack()">â† Back</button>
-    <div id="pub-profile-con"><div class="loading"><div class="spinner"></div></div></div>
-  </div>
-</div>
-
-<!-- â”€â”€ EMPLOYER â”€â”€ -->
-<div class="page" id="page-employer">
-  <div class="employer-page">
-    <div class="emp-hero">
       <div>
-        <h1>Build Operational Teams<br/><em style="font-style:italic;color:var(--accent)">with Structured Talent.</em></h1>
-        <p>Post roles directly to our curated talent network — structured professionals operating from a managed facility.</p>
-      </div>
-      <button class="emp-cta" onclick="togglePostForm()">+ Post a Role</button>
-    </div>
-    <div class="emp-stats">
-      <div class="emp-stat"><span class="emp-stat-num" id="emp-total">—</span><div class="emp-stat-label">Active job seekers</div></div>
-      <div class="emp-stat"><span class="emp-stat-num" id="emp-remote">—</span><div class="emp-stat-label">Remote seekers</div></div>
-      <div class="emp-stat"><span class="emp-stat-num">Free</span><div class="emp-stat-label">To post</div></div>
-    </div>
-    <div class="post-form" id="post-form" style="display:none">
-      <h3 style="font-family:var(--font-d);font-size:1.3rem;font-weight:500;margin-bottom:1.5rem">Post a New Role</h3>
-      <div class="form-grid">
-        <div><label class="f-label">Job Title *</label><input class="f-input" id="pj-title" placeholder="e.g. Virtual Assistant" /></div>
-        <div><label class="f-label">Company *</label><input class="f-input" id="pj-company" placeholder="Your company name" /></div>
-        <div><label class="f-label">City</label><input class="f-input" id="pj-city" placeholder="Davao City" /></div>
-        <div><label class="f-label">Work Setup</label>
-          <select class="f-select" id="pj-remote"><option value="">On-site</option><option value="remote">Remote / WFH</option><option value="hybrid">Hybrid</option></select>
+        <div class="footer-col-title">Opportunities</div>
+        <div class="footer-links">
+          <a href="#opportunities" class="footer-link">Browse All Roles</a>
+          <a href="#" class="footer-link">Remote Operations</a>
+          <a href="#" class="footer-link">Client Support</a>
+          <a href="#" class="footer-link">AI-Assisted Workflows</a>
+          <a href="#" class="footer-link">Marketing Operations</a>
+          <a href="#" class="footer-link">Executive Assistance</a>
         </div>
-        <div><label class="f-label">Employment Type</label>
-          <select class="f-select" id="pj-type"><option value="">Select…</option><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Freelance</option><option>Internship</option></select>
-        </div>
-        <div><label class="f-label">Salary Range (â‚±)</label>
-          <div style="display:flex;gap:8px"><input class="f-input" id="pj-sal-min" placeholder="Min" style="margin-bottom:0" /><input class="f-input" id="pj-sal-max" placeholder="Max" style="margin-bottom:0" /></div>
-        </div>
-        <div class="full"><label class="f-label">Job Description *</label><textarea class="f-textarea" id="pj-desc" placeholder="Describe the role…" style="min-height:120px"></textarea></div>
-        <div class="full"><label class="f-label">Application URL</label><input class="f-input" id="pj-url" placeholder="https://yoursite.com/apply" /></div>
       </div>
-      <div style="display:flex;gap:10px">
-        <button class="post-submit" onclick="submitJob()">Post Job</button>
-        <button class="emp-btn" onclick="togglePostForm()">Cancel</button>
-      </div>
-    </div>
-    <div id="emp-jobs-sec" style="display:none">
-      <div class="section-hdr"><h3 class="section-title" style="font-size:1.1rem">Your Postings</h3></div>
-      <div id="emp-jobs-list"></div>
-    </div>
-  </div>
-</div>
 
-<!-- â”€â”€ ADMIN â”€â”€ -->
-<div class="page" id="page-admin">
-  <div class="admin-page">
-    <h2 style="font-family:var(--font-d);font-size:1.8rem;font-weight:500;margin-bottom:1.5rem;letter-spacing:-.02em">Admin Dashboard</h2>
-    <div class="admin-tabs">
-      <button class="admin-tab active" onclick="swAdmin('overview',this)">Overview</button>
-      <button class="admin-tab" onclick="swAdmin('sources',this)">Sources</button>
-      <button class="admin-tab" onclick="swAdmin('users',this)">Users</button>
+      <div>
+        <div class="footer-col-title">Network</div>
+        <div class="footer-links">
+          <a href="#signup" class="footer-link">Join the Network</a>
+          <a href="#signin" class="footer-link">Sign In</a>
+          <a href="#" class="footer-link">Post a Role</a>
+          <a href="#" class="footer-link">Employer Dashboard</a>
+          <a href="https://rankfixer.co/about.html" class="footer-link">About RankFixer</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@rankfixer.co" class="footer-link">info@rankfixer.co</a>
+          <a href="https://rankfixer.co/contact.html" class="footer-link">Book a Consultation</a>
+          <a href="https://rankfixer.co" class="footer-link">Managed Staffing</a>
+        </div>
+        <div style="margin-top:20px;font-family:var(--ff-mono);font-size:11.5px;color:rgba(255,255,255,0.3);">
+          Response within 1 business day<br>
+          Philippines (PHT, UTC+8)
+        </div>
+      </div>
     </div>
-    <div class="admin-sec active" id="adm-overview">
-      <div class="admin-stat-grid" id="adm-stats"><div class="loading"><div class="spinner"></div></div></div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&#169; 2026 RankFixer. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
     </div>
-    <div class="admin-sec" id="adm-sources"><div id="adm-src-con"><div class="loading"><div class="spinner"></div></div></div></div>
-    <div class="admin-sec" id="adm-users"><div class="rf-empty-state"><h3>User management</h3><p>User records are managed via the operational database. <a href="https://supabase.com/dashboard" target="_blank" rel="noopener" style="color:var(--accent)">Open dashboard ↗</a></p></div></div>
   </div>
-</div>
+</footer>
 
 <script>
-var API = 'https://jobcopilot-api-zeuk.onrender.com';
-var tok = localStorage.getItem('_jc_tok') || null;
-var CU  = (function(){ try{ return JSON.parse(localStorage.getItem('_jc_user') || 'null'); } catch(e){ localStorage.removeItem('_jc_user'); return null; } })();
-var savedIds = {};
-var curPage = 1, totPages = 1, remOnly = false, prevPg = 'home';
-var modalMode = 'login', newSkillProf = 3;
-var sugTimer = null, trkFilter = 'all', allApps = [];
-var adminLoaded = false;
+// ── CONFIG ────────────────────────────────────────────────────────────────
+const API = 'https://jobcopilotph.vercel.app';
+const LIMIT = 10;
 
-// â”€â”€ UTILS â”€â”€
-function $(id){ return document.getElementById(id); }
-function esc(s){ if(!s)return''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function ago(d){ if(!d)return''; var diff=Math.floor((Date.now()-new Date(d))/86400000); if(diff===0)return'Today'; if(diff===1)return'Yesterday'; if(diff<7)return diff+'d ago'; if(diff<30)return Math.floor(diff/7)+'w ago'; return Math.floor(diff/30)+'mo ago'; }
-function fmtSal(mn,mx,c){ if(!mn&&!mx)return null; c=c||'\u20B1'; var f=function(n){return n>=1000?Math.round(n/1000)+'k':n;}; if(mn&&mx)return c+f(mn)+'\u2013'+f(mx); if(mx)return'Up to '+c+f(mx); return c+f(mn)+'+'; }
-function ini(n){ return(n||'?').trim()[0].toUpperCase(); }
-function toast(m,d){ var t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); },d||3000); }
-function starsHtml(n){
-  var h=''; for(var i=1;i<=5;i++){
-    if(i<=n) h+='<span class="stars"><span class="on">&#9733;</span></span>';
-    else h+='<span class="stars"><span class="off">&#9733;</span></span>';
-  }
-  return '<div class="stars">'+h+'</div>';
-}
-function starsHtmlInline(n){
-  var h='<div class="stars">';
-  for(var i=1;i<=5;i++) h+='<span class="'+ (i<=n?'on':'off') +'">&#9733;</span>';
-  return h+'</div>';
+// ── STATE ─────────────────────────────────────────────────────────────────
+let state = {
+  keyword: '',
+  remote: null,   // true | null
+  page: 1,
+  total: 0,
+  activeFilter: 'all'
+};
+
+// ── UTILS ─────────────────────────────────────────────────────────────────
+function fmtSalary(min, max, currency) {
+  if (!min && !max) return null;
+  const sym = currency === 'PHP' ? '₱' : (currency || '');
+  const fmt = n => n >= 1000 ? sym + (n / 1000).toFixed(0) + 'k' : sym + n;
+  if (min && max) return fmt(min) + '–' + fmt(max);
+  return fmt(min || max);
 }
 
-async function api(path,opts,auth){
-  var h={'Content-Type':'application/json'};
-  if(auth&&tok) h['Authorization']='Bearer '+tok;
-  opts=opts||{};
-  var r=await fetch(API+path,Object.assign({},opts,{headers:Object.assign({},h,opts.headers||{})}));
-  if(r.status===401&&auth){ doLogout(); throw new Error('Session expired'); }
-  return r.json();
+function locationLabel(job) {
+  if (job.remote_type === 'remote') return 'Remote';
+  if (job.city) return job.city;
+  return 'On-site';
 }
 
-// â”€â”€ NAV â”€â”€
-function updateNav(){
-  var a=!!CU;
-  if(a){
-    var letter=ini(CU.name||CU.email||'U');
-    var sets=getSettings();
-    $('nav-auth').innerHTML='<div class="nav-user-wrap" id="nav-user-wrap">'
-      +'<button class="nav-av-btn" onclick="togNavDD()" title="'+(CU.name||CU.email||'Account')+'">'+letter+'</button>'
-      +'<div class="nav-dropdown" id="nav-dd">'
-      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'profile\')">My Profile</button>'
-      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'saved\')">Saved roles</button>'
-      +'<button class="nav-dd-item" onclick="closeNavDD();go(\'tracker\')">Applications</button>'
-      +'<div class="nav-dd-divider"></div>'
-      +'<div class="nav-dd-section">Settings</div>'
-      +'<div class="nav-dd-row" onclick="togNotif()">'
-      +'<span class="nav-dd-row-label">Notifications</span>'
-      +'<div class="toggle'+(sets.notif?' on':'')+'" id="notif-tog"></div>'
-      +'</div>'
-      +'<div class="nav-dd-row" onclick="togPrivacy()">'
-      +'<span class="nav-dd-row-label">Public Profile</span>'
-      +'<div class="toggle'+(sets.pub?' on':'')+'" id="pub-tog"></div>'
-      +'</div>'
-      +'<div class="nav-dd-divider"></div>'
-      +'<button class="nav-dd-item danger" onclick="closeNavDD();doLogout()">Sign Out</button>'
-      +'</div></div>';
-  } else {
-    $('nav-auth').innerHTML='<button class="nav-signin" onclick="openModal(\'login\')">Sign In</button>'
-      +'<button class="nav-signup" onclick="openModal(\'register\')">Sign Up</button>';
-  }
-  $('nav-saved').style.display    = a?'':'none';
-  $('nav-tracker').style.display  = a?'':'none';
-  $('nav-employer').style.display = (a&&CU&&(CU.role==='employer'||CU.role==='admin'))?'':'none';
-  $('nav-admin').style.display    = (a&&CU&&CU.email&&CU.email.indexOf('admin')>-1)?'':'none';
-  // Sync mobile tabs
-  var ms=$('mobt-saved');    if(ms) ms.style.display=a?'':'none';
-  var mt=$('mobt-tracker');  if(mt) mt.style.display=a?'':'none';
-  var pl=$('mobt-profile-label'); if(pl) pl.textContent=a?(CU.name||'Profile'):'';
-  var mp=$('mobt-profile'); if(mp) mp.style.display=a?'':'none';
+function daysAgo(dateStr) {
+  if (!dateStr) return '';
+  const diff = Math.floor((Date.now() - new Date(dateStr)) / 86400000);
+  if (diff === 0) return 'Today';
+  if (diff === 1) return 'Yesterday';
+  if (diff < 7) return diff + 'd ago';
+  if (diff < 30) return Math.floor(diff / 7) + 'w ago';
+  return Math.floor(diff / 30) + 'mo ago';
 }
-function togNavDD(){ var dd=$('nav-dd'); if(dd) dd.classList.toggle('open'); }
-function closeNavDD(){ var dd=$('nav-dd'); if(dd) dd.classList.remove('open'); }
-function getSettings(){ try{ return JSON.parse(localStorage.getItem('_jc_settings')||'{"notif":true,"pub":true}'); }catch(e){ return {notif:true,pub:true}; } }
-function saveSettings(s){ localStorage.setItem('_jc_settings',JSON.stringify(s)); }
-function togNotif(){ var s=getSettings(); s.notif=!s.notif; saveSettings(s); var t=$('notif-tog'); if(t) t.classList.toggle('on',s.notif); toast(s.notif?'Notifications on':'Notifications off'); }
-function togPrivacy(){ var s=getSettings(); s.pub=!s.pub; saveSettings(s); var t=$('pub-tog'); if(t) t.classList.toggle('on',s.pub); toast(s.pub?'Profile is now public':'Profile is now private'); }
 
-// â”€â”€ PAGES â”€â”€
-function go(name){
-  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
-  document.querySelectorAll('.nav-btn').forEach(function(b){ b.classList.remove('active'); });
-  document.querySelectorAll('.mob-tab').forEach(function(b){ b.classList.remove('active'); });
-  var pg=$('page-'+name);
-  if(pg) pg.classList.add('active');
-  var nb=$('nav-'+name);
-  if(nb) nb.classList.add('active');
-  var mb=$('mobt-'+name);
-  if(mb) mb.classList.add('active');
-  window.scrollTo(0,0);
-  if(name==='home')        loadHome();
-  if(name==='search')      doSearch();
-  if(name==='saved')       loadSaved();
-  if(name==='tracker')     loadTracker();
-  if(name==='profile')     loadProfile();
-  if(name==='employer'){ loadEmpStats(); loadEmpJobs(); }
-  if(name==='admin')       loadAdmin();
+function categoryFromJob(job) {
+  const t = (job.title || '').toLowerCase();
+  const c = (job.category || '').toLowerCase();
+  if (t.includes('ai') || t.includes('automation') || c.includes('ai')) return 'ai-workflows';
+  if (t.includes('market')) return 'marketing-ops';
+  if (t.includes('exec') || t.includes('assistant') || t.includes('va')) return 'exec-assist';
+  if (t.includes('support') || t.includes('customer') || t.includes('client')) return 'client-support';
+  if (t.includes('admin')) return 'admin-support';
+  return 'remote-ops';
 }
-function goBack(){ go(prevPage||'search'); }
 
-// â”€â”€ AUTH MODAL â”€â”€
-function openModal(mode){ modalMode=mode; renderModal(); $('auth-modal').classList.add('open'); }
-function closeModal(){ $('auth-modal').classList.remove('open'); }
-function switchMode(){ modalMode=modalMode==='login'?'register':'login'; renderModal(); }
-function renderModal(){
-  var isL=modalMode==='login';
-  $('m-title').textContent=isL?'Welcome back.':'Create account.';
-  $('m-sub').innerHTML=isL?'Don\'t have an account? <span onclick="switchMode()">Sign up free</span>':'Already have an account? <span onclick="switchMode()">Sign in</span>';
-  $('m-name-wrap').style.display=isL?'none':'block';
-  $('m-submit').textContent=isL?'Sign In':'Create Account';
-  $('m-error').classList.remove('show');
+const iconLocation = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.01 1 2 3.01 2 5.5c0 3.37 4.5 7.5 4.5 7.5S11 8.87 11 5.5C11 3.01 8.99 1 6.5 1z" stroke="currentColor" stroke-width="1.2"/><circle cx="6.5" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>`;
+const iconClock   = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 4v3l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+const iconCal     = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 5.5h10M4.5 1.5v2M8.5 1.5v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+
+// ── RENDER JOB CARD ───────────────────────────────────────────────────────
+function renderCard(job) {
+  const salary = fmtSalary(job.salary_min, job.salary_max, job.salary_currency || 'PHP');
+  const cat = categoryFromJob(job);
+  const isRemote = job.remote_type === 'remote';
+  const posted = daysAgo(job.posted_at || job.created_at);
+  const empType = job.employment_type
+    ? job.employment_type.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+    : 'Full-time';
+
+  const badges = [];
+  badges.push(`<span class="badge badge-operational">Operational Role</span>`);
+  if (isRemote) badges.push(`<span class="badge badge-remote">Remote</span>`);
+  if ((job.title || '').toLowerCase().includes('ai') || (job.category || '').toLowerCase().includes('ai'))
+    badges.push(`<span class="badge badge-ai">AI-Integrated</span>`);
+  badges.push(`<span class="badge badge-type">${empType}</span>`);
+
+  return `
+  <article class="job-card" data-category="${cat}" data-id="${job.id}">
+    <div class="job-card-main">
+      <div class="job-card-company">
+        ${job.company || 'RankFixer Ops'}
+        <span style="color:var(--border);font-size:14px">·</span>
+        ${locationLabel(job)}
+      </div>
+      <h3 class="job-card-title">${job.title || 'Untitled Role'}</h3>
+      <div class="job-card-meta">
+        <span class="job-meta-item">${iconLocation} ${locationLabel(job)}</span>
+        <span class="job-meta-item">${iconClock} ${empType}</span>
+        ${posted ? `<span class="job-meta-item">${iconCal} ${posted}</span>` : ''}
+      </div>
+      <div class="job-badges">${badges.join('')}</div>
+    </div>
+    <div class="job-card-actions">
+      ${salary ? `<div><div class="job-salary">${salary}</div><div class="job-salary-label">per month</div></div>` : '<div></div>'}
+      <a href="https://jobcopilotph.vercel.app/jobs/${job.id}" target="_blank" rel="noopener" class="btn-view">View Role →</a>
+    </div>
+  </article>`;
 }
-async function submitAuth(){
-  var email=$('m-email').value.trim(), pass=$('m-pass').value;
-  var err=$('m-error');
-  if(!email||!pass){ err.textContent='Email and password required.'; err.classList.add('show'); return; }
-  $('m-submit').disabled=true; $('m-submit').textContent='Please wait…';
-  try{
-    var res;
-    if(modalMode==='login'){
-      res=await api('/api/auth/login',{method:'POST',body:JSON.stringify({email:email,password:pass})});
-    } else {
-      var name=$('m-name').value.trim(), role=$('m-role').value;
-      res=await api('/api/auth/register',{method:'POST',body:JSON.stringify({email:email,password:pass,full_name:name,role:role})});
-      if(res.success){ toast('&#9993;ï¸ Check your email to confirm.'); closeModal(); $('m-submit').disabled=false; renderModal(); return; }
+
+// ── FETCH JOBS ────────────────────────────────────────────────────────────
+async function fetchJobs() {
+  const grid    = document.getElementById('jobs-grid');
+  const loading = document.getElementById('jobs-loading');
+  const error   = document.getElementById('jobs-error');
+  const empty   = document.getElementById('jobs-empty');
+  const pgWrap  = document.getElementById('pagination');
+
+  grid.style.display = 'none';
+  loading.style.display = 'block';
+  error.style.display = 'none';
+  empty.style.display = 'none';
+  pgWrap.style.display = 'none';
+
+  const params = new URLSearchParams({
+    page: state.page,
+    limit: LIMIT,
+    ...(state.keyword ? { keyword: state.keyword } : {}),
+    ...(state.remote   ? { remote: 'true' }        : {})
+  });
+
+  try {
+    const res = await fetch(`${API}/api/jobs?${params}`);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+
+    loading.style.display = 'none';
+
+    const jobs = json.data || [];
+    state.total = json.pagination?.total || 0;
+
+    // client-side category filter
+    const filtered = state.activeFilter === 'all'
+      ? jobs
+      : jobs.filter(j => categoryFromJob(j) === state.activeFilter);
+
+    if (filtered.length === 0) {
+      empty.style.display = 'block';
+      return;
     }
-    if(!res.success) throw new Error(res.error||'Authentication failed');
-    tok=res.data.session.access_token; CU=res.data.user;
-    localStorage.setItem('_jc_tok',tok);
-    localStorage.setItem('_jc_user',JSON.stringify(CU));
-    closeModal(); updateNav(); toast('Welcome back.'); loadSavedIds();
-  } catch(e){ err.textContent=e.message; err.classList.add('show'); }
-  finally{ $('m-submit').disabled=false; renderModal(); }
-}
-function doLogout(){
-  tok=null; CU=null; savedIds={};
-  localStorage.removeItem('_jc_tok'); localStorage.removeItem('_jc_user');
-  updateNav(); go('home'); toast('Signed out.');
+
+    grid.innerHTML = filtered.map(renderCard).join('');
+    grid.style.display = 'block';
+    renderPagination(json.pagination);
+
+  } catch (err) {
+    loading.style.display = 'none';
+    error.style.display = 'block';
+    console.error('Jobs fetch failed:', err);
+  }
 }
 
-// â”€â”€ HOME â”€â”€
-async function loadHome(){
-  try{
-    var s=await api('/api/stats');
-    if(s.success){ $('stat-total').textContent=(s.data.totalJobs||0).toLocaleString(); $('stat-remote').textContent=(s.data.remoteJobs||0).toLocaleString(); }
-    var j=await api('/api/jobs?limit=6');
-    $('home-jobs').innerHTML=(j.success&&j.data.length)?j.data.map(jobCardHtml).join(''):'<div class="rf-empty-state"><h3>Talent network is syncing</h3><p>Operational listings are being updated. Check back shortly.</p></div>';
-  } catch(e){ $('home-jobs').innerHTML='<div class="rf-empty-state"><h3>Refreshing Talent Network</h3><p>We are updating our operational listings. Please check back shortly.</p></div>'; }
-}
-function heroSearch(){ $('s-kw').value=$('h-kw').value.trim(); go('search'); }
-function qSearch(kw){ $('s-kw').value=kw; go('search'); }
+// ── PAGINATION ────────────────────────────────────────────────────────────
+function renderPagination(pg) {
+  if (!pg || pg.total <= LIMIT) return;
+  const totalPages = Math.ceil(pg.total / LIMIT);
+  const info = document.getElementById('pagination-info');
+  const btns = document.getElementById('pagination-btns');
+  const wrap = document.getElementById('pagination');
 
-function jobCardHtml(j){
-  var sal=fmtSal(j.salary_min,j.salary_max,j.salary_currency);
-  var isR=j.remote_type==='remote';
-  var isN=j.posted_at&&(Date.now()-new Date(j.posted_at))/86400000<2;
-  return '<div class="job-card" onclick="openJob(\''+esc(j.id)+'\',\'home\')">'
-    +'<div class="card-top"><div class="av">'+ini(j.company)+'</div>'
-    +'<div><div class="card-title">'+esc(j.title)+'</div><div class="card-company">'+esc(j.company||'Company')+'</div></div></div>'
-    +'<div class="tags">'
-    +(j.city?'<span class="tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-1px;margin-right:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'+esc(j.city)+'</span>':'')
-    +(isR?'<span class="tag badge">Remote Operations</span>':'')
-    +(j.employment_type?'<span class="tag">'+esc(j.employment_type)+'</span>':'')
-    +(sal?'<span class="tag salary">'+sal+'</span>':'')
-    +(isN?'':'')
-    +'</div>'
-    +'<div class="card-footer"><span>'+esc(j.source&&j.source.name?j.source.name:'Operational Role')+'</span><span>'+ago(j.posted_at)+'</span></div>'
-    +'</div>';
+  const start = (pg.page - 1) * pg.limit + 1;
+  const end   = Math.min(pg.page * pg.limit, pg.total);
+  info.textContent = `Showing ${start}–${end} of ${pg.total} roles`;
+
+  const pages = [];
+  pages.push(`<button class="page-btn" onclick="goPage(${pg.page - 1})" ${pg.page === 1 ? 'disabled style="opacity:.4;cursor:default"' : ''}>←</button>`);
+
+  // show at most 5 page numbers around current
+  let startP = Math.max(1, pg.page - 2);
+  let endP   = Math.min(totalPages, startP + 4);
+  startP = Math.max(1, endP - 4);
+
+  for (let p = startP; p <= endP; p++) {
+    pages.push(`<button class="page-btn ${p === pg.page ? 'active' : ''}" onclick="goPage(${p})">${p}</button>`);
+  }
+  pages.push(`<button class="page-btn" onclick="goPage(${pg.page + 1})" ${pg.page >= totalPages ? 'disabled style="opacity:.4;cursor:default"' : ''}>→</button>`);
+
+  btns.innerHTML = pages.join('');
+  wrap.style.display = 'flex';
 }
 
-// â”€â”€ SEARCH â”€â”€
-async function doSearch(){
-  var kwEl=$('s-kw'); var kw=String(kwEl?kwEl.value:'').trim();
-  var cityEl=$('s-city'); var city=String(cityEl?cityEl.value:'').trim();
-  curPage=1;
-  var con=$('jobs-con'), meta=$('res-meta');
-  if(!con) return;
-  con.innerHTML='<div class="loading"><div class="spinner"></div></div>';
-  if(meta) meta.style.display='none';
-  $('pg').innerHTML='';
-  var p=new URLSearchParams({page:1,limit:15});
-  if(kw) p.set('keyword',kw); if(city) p.set('city',city); if(remOnly) p.set('remote','true');
-  var d=await api('/api/jobs?'+p);
-  if(!d.success){ con.innerHTML='<div class="rf-empty-state"><h3>Refreshing Talent Network</h3><p>We are updating our operational listings. Please check back shortly.</p></div>'; return; }
-  totPages=d.totalPages||1;
-  if(meta){ meta.style.display='flex'; $('res-count').innerHTML='Showing <strong>'+d.data.length+'</strong> of <strong>'+(d.total||0).toLocaleString()+'</strong>'+(kw?' for "<strong>'+esc(kw)+'</strong>"':''); }
-  con.innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="rf-empty-state"><h3>No matching roles</h3><p>Try adjusting your search — or browse all open positions.</p><button class="outline-btn" onclick="$(\'s-kw\').value=\'\';doSearch()" style="margin-top:1rem">View all roles</button></div>';
-  renderPg();
+function goPage(p) {
+  if (p < 1) return;
+  state.page = p;
+  document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  fetchJobs();
 }
-async function loadJobsPage(pg){
-  curPage=pg;
-  var kwEl=$('s-kw'); var kw=String(kwEl?kwEl.value:'').trim();
-  var cityEl=$('s-city'); var city=String(cityEl?cityEl.value:'').trim();
-  var p=new URLSearchParams({page:pg,limit:15});
-  if(kw) p.set('keyword',kw); if(city) p.set('city',city); if(remOnly) p.set('remote','true');
-  var d=await api('/api/jobs?'+p);
-  if(!d.success) return;
-  totPages=d.totalPages||1;
-  $('res-count').innerHTML='Showing <strong>'+d.data.length+'</strong> of <strong>'+(d.total||0).toLocaleString()+'</strong>'+(kw?' for "<strong>'+esc(kw)+'</strong>"':'');
-  $('jobs-con').innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="empty"><h3>No jobs found</h3></div>';
-  renderPg(); window.scrollTo(0,0);
+
+// ── STATS ─────────────────────────────────────────────────────────────────
+async function loadStats() {
+  try {
+    const res = await fetch(`${API}/api/stats`);
+    const json = await res.json();
+    if (!json.success) return;
+    const el = document.getElementById('live-job-count');
+    if (el && json.data.totalJobs) {
+      el.textContent = json.data.totalJobs.toLocaleString() + '+';
+    }
+  } catch (_) {}
 }
-function listCardHtml(j){
-  var sal=fmtSal(j.salary_min,j.salary_max,j.salary_currency);
-  var isR=j.remote_type==='remote'; var sv=savedIds[j.id];
-  return '<div class="list-card" onclick="openJob(\''+esc(j.id)+'\',\'search\')">'
-    +'<div class="av" style="width:48px;height:48px;flex-shrink:0">'+ini(j.company)+'</div>'
-    +'<div class="list-body">'
-    +'<div class="list-title">'+esc(j.title)+'</div>'
-    +'<div class="list-company">'+esc(j.company||'Company')+(j.city?' Â· '+esc(j.city):'')+'</div>'
-    +'<div class="tags" style="margin-top:6px">'+(isR?'<span class="tag badge">Remote Operations</span>':'')+(j.employment_type?'<span class="tag">'+esc(j.employment_type)+'</span>':'')+(sal?'<span class="tag salary">'+sal+'</span>':'')+'</div>'
-    +(j.snippet?'<div class="list-snippet">'+esc(j.snippet)+'</div>':'')
-    +'</div>'
-    +'<div class="list-right"><span>'+ago(j.posted_at)+'</span>'
-    +(CU?'<button class="save-btn'+(sv?' saved':'')+('" onclick="event.stopPropagation();togSave(\''+esc(j.id)+'\',this)">'+(sv?'â™¥ Saved':'â™¡ Save')+'</button>'):'')
-    +'<span>'+esc(j.source&&j.source.name?j.source.name:'')+'</span></div>'
-    +'</div>';
+
+// ── SEARCH ────────────────────────────────────────────────────────────────
+function handleSearch() {
+  const q   = document.getElementById('hero-search-input').value.trim();
+  const cat = document.getElementById('hero-search-category')?.value || '';
+  state.keyword = q;
+  state.page = 1;
+  if (cat) {
+    state.activeFilter = cat;
+    syncFilterBtns(cat);
+  }
+  document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  fetchJobs();
 }
-function renderPg(){
-  if(totPages<=1){ $('pg').innerHTML=''; return; }
-  var h='<button class="page-btn" onclick="loadJobsPage('+(curPage-1)+')" '+(curPage===1?'disabled':'')+'">â† Prev</button>';
-  var s=Math.max(1,curPage-2), e=Math.min(totPages,curPage+2);
-  if(s>1) h+='<button class="page-btn" onclick="loadJobsPage(1)">1</button>'+(s>2?'<span style="color:var(--text-muted);padding:0 4px">…</span>':'');
-  for(var i=s;i<=e;i++) h+='<button class="page-btn'+(i===curPage?' active':'')+('" onclick="loadJobsPage('+i+')">')+i+'</button>';
-  if(e<totPages) h+=(e<totPages-1?'<span style="color:var(--text-muted);padding:0 4px">…</span>':'')+' <button class="page-btn" onclick="loadJobsPage('+totPages+')">'+totPages+'</button>';
-  h+='<button class="page-btn" onclick="loadJobsPage('+(curPage+1)+')" '+(curPage===totPages?'disabled':'')+'">Next â†’</button>';
-  $('pg').innerHTML=h;
+
+function filterByCategory(cat, e) {
+  if (e) e.preventDefault();
+  state.activeFilter = cat;
+  state.page = 1;
+  syncFilterBtns(cat);
+  document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  fetchJobs();
 }
-function togRem(){ remOnly=!remOnly; $('rem-tog').classList.toggle('on',remOnly); }
-async function fetchSug(q){
-  clearTimeout(sugTimer);
-  var box=$('sug-box');
-  if(q.length<2){ box.classList.remove('open'); return; }
-  sugTimer=setTimeout(async function(){
-    var d=await api('/api/search/suggest?q='+encodeURIComponent(q));
-    if(d.success&&d.data&&d.data.length){
-      box.innerHTML=d.data.map(function(s){
-        var text=typeof s==='string'?s:(s.title||s.name||String(s));
-        return'<div class="suggest-item" onmousedown="pickSug(\''+esc(text)+'\')">'+esc(text)+'</div>';
-      }).join('');
-      box.classList.add('open');
-    } else box.classList.remove('open');
-  },250);
+
+function setFilter(cat, btn) {
+  state.activeFilter = cat;
+  state.page = 1;
+  syncFilterBtns(cat);
+  fetchJobs();
 }
-function pickSug(v){ $('s-kw').value=v; $('sug-box').classList.remove('open'); doSearch(); }
-document.addEventListener('click',function(e){
-  if(!e.target.closest('.toolbar-wrap')&&$('sug-box')) $('sug-box').classList.remove('open');
-  if(!e.target.closest('#nav-user-wrap')){ var dd=$('nav-dd'); if(dd) dd.classList.remove('open'); }
+
+function syncFilterBtns(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('onclick')?.includes("'" + cat + "'") || (cat === 'all' && b.getAttribute('onclick')?.includes("'all'")));
+  });
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+document.getElementById('hero-search-input').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') handleSearch();
 });
 
-// â”€â”€ JOB DETAIL â”€â”€
-async function openJob(id,from){
-  prevPage=from||'search'; go('detail');
-  $('detail-con').innerHTML='<div class="loading"><div class="spinner"></div></div>';
-  var d=await api('/api/jobs/'+id);
-  if(!d.success){ $('detail-con').innerHTML='<div class="empty"><p>Job not found.</p></div>'; return; }
-  $('detail-con').innerHTML=detailHtml(d.data);
-  injectJobSchema(d.data);  // ADD THIS LINE
-
-}
-function injectJobSchema(j){
-  var el = document.getElementById('job-schema');
-  if(el) el.remove();
-  var schema = {
-    '@context': 'https://schema.org',
-    '@type': 'JobPosting',
-    'title': j.title || '',
-    'description': (j.description || j.snippet || '').replace(/<[^>]*>/g,'').slice(0,500),
-    'datePosted': j.posted_at || '',
-    'hiringOrganization': { '@type': 'Organization', 'name': j.company || 'Company' },
-    'jobLocation': {
-      '@type': 'Place',
-      'address': { '@type': 'PostalAddress', 'addressLocality': j.city || '', 'addressCountry': 'PH' }
-    },
-    'employmentType': j.employment_type || 'FULL_TIME',
-    'jobLocationType': j.remote_type === 'remote' ? 'TELECOMMUTE' : 'ONSITE'
-  };
-  if(j.salary_min || j.salary_max){
-    schema.baseSalary = {
-      '@type': 'MonetaryAmount',
-      'currency': j.salary_currency || 'PHP',
-      'value': {
-        '@type': 'QuantitativeValue',
-        'minValue': j.salary_min || j.salary_max,
-        'maxValue': j.salary_max || j.salary_min,
-        'unitText': 'MONTH'
-      }
-    };
-  }
-  var script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.id = 'job-schema';
-  script.textContent = JSON.stringify(schema);
-  document.head.appendChild(script);
-}
-function detailHtml(j){
-  var sal=fmtSal(j.salary_min,j.salary_max,j.salary_currency);
-  var isR=j.remote_type==='remote'; var sv=savedIds[j.id];
-  var h='<div class="detail-card"><div class="detail-hdr">';
-  h+='<div class="detail-av">'+ini(j.company)+'</div>';
-  h+='<div class="detail-title">'+esc(j.title)+'</div>';
-  h+='<div class="detail-co">'+esc(j.company||'Company')+(j.location?' Â· '+esc(j.location):'')+'</div>';
-  h+='<div class="detail-tags">';
-  if(j.city) h+='<span class="detail-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> '+esc(j.city)+'</span>';
-  if(isR)    h+='<span class="detail-tag badge">Remote Operations Role</span>';
-  if(j.employment_type) h+='<span class="detail-tag">'+esc(j.employment_type)+'</span>';
-  if(sal)    h+='<span class="detail-tag salary">'+sal+'</span>';
-  h+='<span class="detail-tag">'+ago(j.posted_at)+'</span>';
-  if(j.source&&j.source.name) h+='<span class="detail-tag">via '+esc(j.source.name)+'</span>';
-  h+='</div><div class="detail-actions">';
-  if(j.job_url) h+='<a href="'+esc(j.job_url)+'" target="_blank" rel="noopener" class="apply-btn">Apply Now â†—</a>';
-  else h+='<button class="apply-btn" style="opacity:.5;cursor:default">Application closed</button>';
-  if(CU) h+='<button class="outline-btn'+(sv?' active':'')+('" onclick="togSaveDetail(\''+esc(j.id)+'\',this)">'+(sv?'â™¥ Saved':'â™¡ Save Job')+'</button>');
-  if(CU) h+='<button class="outline-btn" onclick="trackApp(\''+esc(j.id)+'\')">+ Track Application</button>';
-  h+='</div></div><div class="detail-body">';
-  if(j.city||isR||j.employment_type||sal){
-    h+='<div class="detail-grid">';
-    if(j.city) h+='<div class="info-item"><div class="info-label">Location</div><div class="info-value">'+esc(j.city)+'</div></div>';
-    if(isR)    h+='<div class="info-item"><div class="info-label">Work Setup</div><div class="info-value">Remote / WFH</div></div>';
-    if(j.employment_type) h+='<div class="info-item"><div class="info-label">Job Type</div><div class="info-value">'+esc(j.employment_type)+'</div></div>';
-    if(sal)    h+='<div class="info-item"><div class="info-label">Salary</div><div class="info-value">'+sal+'</div></div>';
-    h+='</div>';
-  }
-if(j.description||j.snippet){
-  var desc = esc(j.description||j.snippet);
-  // Split on double newlines for paragraphs, single newlines for line breaks
-  desc = desc.split(/\n\n+/).map(function(p){ return '<p>'+p.replace(/\n/g,'<br>')+'</p>'; }).join('');
-  h+='<div class="detail-sec"><h3>About this role</h3>'+desc+'</div>';
-}
-  if(j.source&&j.source.name) h+='<p style="font-size:.8rem;color:var(--text-muted)">â„¹ï¸ Sourced from <strong>'+esc(j.source.name)+'</strong></p>';
-  return h+'</div></div>';
-}
-
-// â”€â”€ SAVE â”€â”€
-async function loadSavedIds(){
-  if(!CU||!tok) return;
-  try{ var d=await api('/api/saved',{},true); if(d.success) d.data.forEach(function(item){ var j=item.job||item.jobs_clean||item; if(j&&j.id) savedIds[j.id]=true; }); } catch(e){}
-}
-async function togSave(id,btn){
-  if(!CU){ openModal('login'); return; }
-  var sv=!savedIds[id];
-  if(sv){ await api('/api/saved/'+id,{method:'POST'},true); savedIds[id]=true; btn.textContent='â™¥ Saved'; btn.classList.add('saved'); toast('Job saved!'); }
-  else{ await api('/api/saved/'+id,{method:'DELETE'},true); delete savedIds[id]; btn.textContent='â™¡ Save'; btn.classList.remove('saved'); toast('Removed.'); }
-}
-async function togSaveDetail(id,btn){
-  if(!CU){ openModal('login'); return; }
-  var sv=!savedIds[id];
-  if(sv){ await api('/api/saved/'+id,{method:'POST'},true); savedIds[id]=true; btn.textContent='â™¥ Saved'; btn.classList.add('active'); toast('Job saved!'); }
-  else{ await api('/api/saved/'+id,{method:'DELETE'},true); delete savedIds[id]; btn.textContent='â™¡ Save Job'; btn.classList.remove('active'); toast('Removed.'); }
-}
-async function trackApp(id){
-  if(!CU){ openModal('login'); return; }
-  try{ await api('/api/applications',{method:'POST',body:JSON.stringify({job_id:id})},true); toast('âœ… Application tracked!'); }
-  catch(e){ toast(e.message.indexOf('tracked')>-1?'Already tracking this job.':'Could not track.'); }
-}
-
-// â”€â”€ SAVED PAGE â”€â”€
-async function loadSaved(){
-  if(!CU){ $('saved-con').innerHTML='<div class="rf-empty-state"><h3>Sign in to see saved roles</h3><p><button class="search-btn" style="display:inline-block;margin-top:1rem" onclick="openModal(\'login\')">Sign In</button></p></div>'; return; }
-  $('saved-con').innerHTML='<div class="loading"><div class="spinner"></div></div>';
-  var d=await api('/api/saved',{},true);
-  if(d.success&&d.data&&d.data.length){
-    $('saved-con').innerHTML='<div class="jobs-grid">'+d.data.map(function(item){
-      var j=item.job||item.jobs_clean||item;
-      return jobCardHtml(j);
-    }).join('')+'</div>';
-  } else {
-    $('saved-con').innerHTML='<div class="rf-empty-state"><h3>No saved roles</h3><p>Browse opportunities and tap Save to add them here.</p></div>';
-  }
-}
-
-// â”€â”€ TRACKER â”€â”€
-var ST=[{k:'all',l:'All'},{k:'applied',l:'Applied',c:'#185FA5',bg:'#E6F1FB'},{k:'interviewing',l:'Interviewing',c:'#854F0B',bg:'#FAEEDA'},{k:'offered',l:'Offered',c:'#3B6D11',bg:'#EAF3DE'},{k:'rejected',l:'Rejected',c:'#8B1A1A',bg:'#FBEAEA'}];
-async function loadTracker(){
-  if(!CU){ $('trk-con').innerHTML='<div class="rf-empty-state"><h3>Sign in to track applications</h3></div>'; return; }
-  allApps=[];
-  $('trk-con').innerHTML='<div class="loading"><div class="spinner"></div></div>';
-  var d=await api('/api/applications',{},true);
-  if(d.success){ allApps=d.data||[]; renderTracker(); }
-  else { $('trk-con').innerHTML='<div class="rf-empty-state"><h3>No applications yet</h3><p>Open a role and click Track Application.</p></div>'; }
-}
-function renderTracker(){
-  var counts={}; ST.forEach(function(s){ counts[s.k]=s.k==='all'?allApps.length:allApps.filter(function(a){ return a.status===s.k; }).length; });
-  $('trk-tabs').innerHTML=ST.map(function(s){ return'<button class="status-tab'+(trkFilter===s.k?' active':'')+('" onclick="setTrkF(\''+s.k+'\')">')+s.l+(counts[s.k]>0?' ('+counts[s.k]+')':[])+'</button>'; }).join('');
-  var fl=trkFilter==='all'?allApps:allApps.filter(function(a){ return a.status===trkFilter; });
-  if(!fl.length){ $('trk-con').innerHTML='<div class="rf-empty-state"><h3>No applications</h3><p>Open a role and click Track Application.</p></div>'; return; }
-  $('trk-con').innerHTML=fl.map(function(a){
-    var st=ST.find(function(s){ return s.k===a.status; })||ST[1];
-    return'<div class="app-card">'
-      +'<div style="flex:1"><div class="app-title">'+esc(a.jobs_clean&&a.jobs_clean.title?a.jobs_clean.title:'Job')+'</div>'
-      +'<div class="app-co">'+esc(a.jobs_clean&&a.jobs_clean.company?a.jobs_clean.company:'Company')+'</div>'
-      +'<div class="app-meta"><span class="status-badge" style="background:'+st.bg+';color:'+st.c+'">'+st.l+'</span><span class="age-txt">'+ago(a.applied_at)+'</span></div>'
-      +(a.notes?'<div class="app-notes">'+esc(a.notes)+'</div>':'')+'</div>'
-      +'<div class="app-actions">'
-      +'<select class="st-select" onchange="updApp(\''+a.id+'\',this.value)">'+ST.filter(function(s){ return s.k!=='all'; }).map(function(s){ return'<option value="'+s.k+('"'+(a.status===s.k?' selected':'')+'>')+s.l+'</option>'; }).join('')+'</select>'
-      +'<button class="del-btn" onclick="delApp(\''+a.id+'\')">Ã— Remove</button>'
-      +'</div></div>';
-  }).join('');
-}
-function setTrkF(f){ trkFilter=f; renderTracker(); }
-async function updApp(id,status){ await api('/api/applications/'+id,{method:'PUT',body:JSON.stringify({status:status})},true); allApps=allApps.map(function(a){ return a.id===id?Object.assign({},a,{status:status}):a; }); renderTracker(); toast('Status updated.'); }
-async function delApp(id){ await api('/api/applications/'+id,{method:'DELETE'},true); allApps=allApps.filter(function(a){ return a.id!==id; }); renderTracker(); toast('Removed.'); }
-
-// â”€â”€ UPDATE PROFILE â”€â”€
-var profData = {};
-async function loadProfile(){
-  if(!CU){ go('home'); openModal('login'); return; }
-  try{
-    var d=await api('/api/profile',{},true);
-    if(!d.success) return;
-    profData=d.data||{};
-    $('p-name').value=profData.full_name||'';
-    $('p-email').value=profData.email||CU.email||'';
-    $('p-phone').value=profData.phone||'';
-    $('p-jobtitle').value=profData.job_title||'';
-    $('p-location').value=profData.location||'';
-    $('p-linkedin').value=profData.linkedin_url||'';
-    $('p-bio').value=profData.bio||'';
-    $('p-resume-url').value=profData.resume_url||'';
-    if(profData.availability) $('p-avail').value=profData.availability;
-    renderSkillsList(profData.skills||[]);
-    renderExpList(profData.experience||[]);
-    renderEduList(profData.education||[]);
-    calcStrength();
-  } catch(e){ toast('Could not load profile.'); }
-}
-function calcStrength(){
-  var p=profData; var sc=0;
-  if(p.full_name) sc++;
-  if(p.linkedin_url) sc++;
-  if(p.skills&&p.skills.length) sc++;
-  if(p.experience&&p.experience.length) sc++;
-  if(p.education&&p.education.length) sc++;
-  var b=$('strength-badge');
-  if(sc>=5){ b.textContent='&#10003; Profile 100% Complete'; b.classList.remove('partial'); }
-  else if(sc>=3){ b.textContent='Profile '+Math.round(sc/5*100)+'% Complete'; b.classList.add('partial'); }
-  else{ b.textContent='Building profile… '+Math.round(sc/5*100)+'%'; b.classList.add('partial'); }
-}
-async function saveProfile(){
-  var d=await api('/api/profile',{method:'PUT',body:JSON.stringify({
-    full_name:   $('p-name').value,
-    phone:       $('p-phone').value,
-    location:    $('p-location').value,
-    job_title:   $('p-jobtitle').value,
-    linkedin_url:$('p-linkedin').value,
-    bio:         $('p-bio').value,
-    resume_url:  $('p-resume-url').value,
-    availability:$('p-avail').value
-  })},true);
-  if(d.success){ Object.assign(profData,d.data); toast('Profile saved &#10003;'); calcStrength(); } else toast('Error: '+d.error);
-}
-
-// Skills
-var newSkillProf=3;
-function setNewSkillStar(n){
-  newSkillProf=n;
-  var stars=$('new-skill-stars').querySelectorAll('.star');
-  stars.forEach(function(s,i){ if(i<n) s.classList.add('on'); else s.classList.remove('on'); });
-}
-function renderSkillsList(skills){
-  if(!skills.length){ $('skills-list').innerHTML=''; return; }
-  $('skills-list').innerHTML=skills.map(function(s){
-    return'<div class="nested-item">'
-      +'<button class="nested-del" onclick="delSkill(\''+s.id+'\')">âœ•</button>'
-      +'<div style="display:flex;align-items:center;justify-content:space-between">'
-      +'<span style="font-weight:600;font-size:.95rem">'+esc(s.skill_name)+'</span>'
-      +starsHtmlInline(s.proficiency||3)
-      +'</div></div>';
-  }).join('');
-}
-async function addSkill(){
-  var name=$('new-skill').value.trim();
-  if(!name){ toast('Enter a skill name.'); return; }
-  var d=await api('/api/skills',{method:'POST',body:JSON.stringify({skill_name:name,proficiency:newSkillProf})},true);
-  if(d.success){ profData.skills=profData.skills||[]; profData.skills.push(d.data); renderSkillsList(profData.skills); $('new-skill').value=''; toast('Skill added!'); calcStrength(); }
-  else toast('Error: '+d.error);
-}
-async function delSkill(id){
-  await api('/api/skills/'+id,{method:'DELETE'},true);
-  profData.skills=profData.skills.filter(function(s){ return s.id!==id; });
-  renderSkillsList(profData.skills); toast('Skill removed.'); calcStrength();
-}
-
-// Experience
-function renderExpList(exp){
-  if(!exp.length){ $('exp-list').innerHTML=''; return; }
-  $('exp-list').innerHTML=exp.map(function(e){
-    return'<div class="nested-item">'
-      +'<button class="nested-del" onclick="delExp(\''+e.id+'\')">âœ•</button>'
-      +'<div style="font-weight:600;font-size:.95rem">'+esc(e.job_title)+'</div>'
-      +'<div style="font-size:.88rem;color:var(--text-sub);margin-top:3px">'+esc(e.company)+(e.start_date?' Â· '+e.start_date.slice(0,7):'')+(e.end_date?' — '+e.end_date.slice(0,7):e.start_date?' — Present':'')+'</div>'
-      +'</div>';
-  }).join('');
-}
-async function saveExp(){
-  var t=$('ne-title').value.trim(), c=$('ne-company').value.trim();
-  if(!t||!c){ toast('Job title and company are required.'); return; }
-  var d=await api('/api/experience',{method:'POST',body:JSON.stringify({job_title:t,company:c,start_date:$('ne-start').value||null,end_date:$('ne-end').value||null})},true);
-  if(d.success){ profData.experience=profData.experience||[]; profData.experience.unshift(d.data); renderExpList(profData.experience); $('ne-title').value=''; $('ne-company').value=''; $('ne-start').value=''; $('ne-end').value=''; $('new-exp-form').style.display='none'; toast('Experience added!'); calcStrength(); }
-  else toast('Error: '+d.error);
-}
-async function delExp(id){
-  await api('/api/experience/'+id,{method:'DELETE'},true);
-  profData.experience=profData.experience.filter(function(e){ return e.id!==id; });
-  renderExpList(profData.experience); toast('Removed.'); calcStrength();
-}
-
-// Education
-function renderEduList(edu){
-  if(!edu.length){ $('edu-list').innerHTML=''; return; }
-  $('edu-list').innerHTML=edu.map(function(e){
-    return'<div class="nested-item">'
-      +'<button class="nested-del" onclick="delEdu(\''+e.id+'\')">âœ•</button>'
-      +'<div style="font-weight:600;font-size:.95rem">'+esc(e.degree||'Degree')+'</div>'
-      +'<div style="font-size:.88rem;color:var(--text-sub);margin-top:3px">'+esc(e.school)+(e.graduation_year?' Â· '+e.graduation_year:'')+'</div>'
-      +'</div>';
-  }).join('');
-}
-async function saveEdu(){
-  var s=$('ne-school').value.trim();
-  if(!s){ toast('School name is required.'); return; }
-  var d=await api('/api/education',{method:'POST',body:JSON.stringify({school:s,degree:$('ne-degree').value.trim()||null,graduation_year:parseInt($('ne-year').value)||null})},true);
-  if(d.success){ profData.education=profData.education||[]; profData.education.unshift(d.data); renderEduList(profData.education); $('ne-school').value=''; $('ne-degree').value=''; $('ne-year').value=''; $('new-edu-form').style.display='none'; toast('Education added!'); calcStrength(); }
-  else toast('Error: '+d.error);
-}
-async function delEdu(id){
-  await api('/api/education/'+id,{method:'DELETE'},true);
-  profData.education=profData.education.filter(function(e){ return e.id!==id; });
-  renderEduList(profData.education); toast('Removed.'); calcStrength();
-}
-
-// â”€â”€ PUBLIC PROFILE â”€â”€
-async function openPubProfile(userId, from){
-  prevPage=from||'search'; go('pub-profile');
-  $('pub-profile-con').innerHTML='<div class="loading"><div class="spinner"></div></div>';
-  var d=await api('/api/profile/'+userId);
-  if(!d.success){ $('pub-profile-con').innerHTML='<div class="empty"><p>Profile not found.</p></div>'; return; }
-  $('pub-profile-con').innerHTML=pubProfileHtml(d.data);
-}
-function pubProfileHtml(p){
-  var hasLI = !!p.linkedin_url;
-  var hasSk = p.skills&&p.skills.length>0;
-  var hasEx = p.experience&&p.experience.length>0;
-  var hasEd = p.education&&p.education.length>0;
-  var complete = hasLI&&hasSk&&hasEx&&hasEd;
-
-  var h='<div class="pub-card">';
-
-  // Header
-  h+='<div class="pub-hdr"><div class="pub-av-area">';
-  h+='<div class="pub-av">'+ini(p.full_name)+'</div>';
-  h+='<div class="pub-meta">';
-  h+='<div style="display:inline-flex;align-items:center;gap:6px;background:'+(complete?'var(--remote-bg)':'var(--gold-bg)')+';color:'+(complete?'var(--remote-txt)':'var(--gold-txt)')+';padding:4px 12px;border-radius:100px;font-size:.75rem;font-weight:600;margin-bottom:.5rem">';
-  h+=(complete?'&#10003; Profile 100% Complete':'Profile Ready')+'</div>';
-  h+='<h1>'+esc(p.full_name||'Candidate')+'</h1>';
-  h+='<div class="pub-contact">';
-  if(p.job_title) h+=esc(p.job_title)+'<br/>';
-  if(p.location)  h+=esc(p.location)+'<br/>';
-  h+='</div></div></div>';
-
-  // Actions
-  h+='<div class="pub-actions">';
-  h+='<a href="mailto:" class="pub-msg-btn">Send Message</a>';
-  if(p.linkedin_url) h+='<a href="'+esc(p.linkedin_url)+'" target="_blank" rel="noopener" class="pub-li-btn">LinkedIn Profile</a>';
-  if(p.resume_url) h+='<a href="'+esc(p.resume_url)+'" target="_blank" rel="noopener" class="pub-dl-btn">Download Resume</a>';
-  else h+='<button class="pub-dl-btn" onclick="window.print()">Download Resume</button>';
-  h+='</div></div>';
-
-  // Body
-  h+='<div class="pub-body">';
-
-  // Skills
-  if(hasSk){
-    h+='<div class="sec-label">Core Expertise</div>';
-    h+='<div class="skills-grid">';
-    p.skills.forEach(function(s){
-      h+='<div class="skill-badge"><span class="skill-name">'+esc(s.skill_name)+'</span>'+starsHtmlInline(s.proficiency||3)+'</div>';
-    });
-    h+='</div>';
-  }
-
-  // Experience
-  if(hasEx){
-    h+='<div class="sec-label">Experience</div>';
-    p.experience.forEach(function(e){
-      h+='<div class="timeline-item">';
-      h+='<div class="tl-title">'+esc(e.job_title)+'</div>';
-      h+='<div class="tl-sub">'+esc(e.company);
-      if(e.start_date) h+=' • '+e.start_date.slice(0,7)+' â€“ '+(e.end_date?e.end_date.slice(0,7):'Present');
-      h+='</div></div>';
-    });
-  }
-
-  // Education
-  if(hasEd){
-    h+='<div class="sec-label">Education</div>';
-    p.education.forEach(function(e){
-      h+='<div class="timeline-item tl-item-edu">';
-      h+='<div class="tl-title">'+esc(e.degree||'Degree')+'</div>';
-      h+='<div class="tl-sub">'+esc(e.school)+(e.graduation_year?' • '+e.graduation_year:'')+'</div>';
-      h+='</div>';
-    });
-  }
-
-  if(!hasSk&&!hasEx&&!hasEd){
-    h+='<div class="rf-empty-state"><h3>Profile in progress</h3><p>This candidate is still building their profile.</p></div>';
-  }
-
-  if(p.bio){
-    h+='<div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">';
-    h+='<div style="font-size:.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem">About</div>';
-    h+='<p style="font-size:.9rem;color:var(--text-sub);line-height:1.75">'+esc(p.bio)+'</p>';
-    h+='</div>';
-  }
-
-  return h+'</div></div>';
-}
-
-// â”€â”€ EMPLOYER â”€â”€
-async function loadEmpStats(){
-  var d=await api('/api/stats');
-  if(d.success){ $('emp-total').textContent=(d.data.totalJobs||0).toLocaleString(); $('emp-remote').textContent=(d.data.remoteJobs||0).toLocaleString(); }
-}
-function togglePostForm(){ $('post-form').style.display=$('post-form').style.display==='none'?'block':'none'; }
-async function submitJob(){
-  if(!CU){ openModal('login'); return; }
-  var title=$('pj-title').value.trim(), company=$('pj-company').value.trim(), desc=$('pj-desc').value.trim();
-  if(!title||!company||!desc){ toast('Title, company, and description are required.'); return; }
-  var d=await api('/api/employer/jobs',{method:'POST',body:JSON.stringify({title:title,company:company,city:$('pj-city').value.trim(),remote_type:$('pj-remote').value,employment_type:$('pj-type').value,salary_min:parseInt($('pj-sal-min').value)||null,salary_max:parseInt($('pj-sal-max').value)||null,description:desc,job_url:$('pj-url').value.trim()})},true);
-  if(d.success){ toast('Job posted! &#10003;'); togglePostForm(); loadEmpJobs(); }
-  else toast('Error: '+(d.error||'Post failed'));
-}
-async function loadEmpJobs(){
-  if(!CU||!tok) return;
-  var d=await api('/api/employer/jobs',{},true);
-  if(d.success&&d.data&&d.data.length){
-    $('emp-jobs-sec').style.display='block';
-    $('emp-jobs-list').innerHTML=d.data.map(function(j){
-      return'<div class="emp-job-card"><div class="emp-job-info">'
-        +'<div class="emp-job-title">'+esc(j.title)+'</div>'
-        +'<div class="emp-job-meta">'+esc(j.company||'')+(j.city?' Â· '+esc(j.city):'')+(j.posted_at?' Â· '+ago(j.posted_at):'')+'</div>'
-        +'</div><div class="emp-job-actions">'
-        +'<button class="emp-btn danger" onclick="delEmpJob(\''+j.id+'\')">Delete</button>'
-        +'</div></div>';
-    }).join('');
-  }
-}
-async function delEmpJob(id){ await api('/api/employer/jobs/'+id,{method:'DELETE'},true); loadEmpJobs(); toast('Job removed.'); }
-
-// â”€â”€ ADMIN â”€â”€
-async function loadAdmin(){
-  if(adminLoaded) return; adminLoaded=true;
-  var stats=await api('/api/stats');
-  if(stats.success){
-    $('adm-stats').innerHTML='<div class="admin-stat hl"><span class="admin-stat-num">'+(stats.data.totalJobs||0).toLocaleString()+'</span><div class="admin-stat-label">Active jobs</div></div>'
-      +'<div class="admin-stat"><span class="admin-stat-num">'+(stats.data.remoteJobs||0).toLocaleString()+'</span><div class="admin-stat-label">Remote jobs</div></div>'
-      +'<div class="admin-stat"><span class="admin-stat-num">'+Math.round(((stats.data.remoteJobs||0)/(stats.data.totalJobs||1))*100)+'%</span><div class="admin-stat-label">Remote ratio</div></div>';
-  }
-  var sources=await api('/api/sources');
-  if(sources.success&&sources.data.length){
-    $('adm-src-con').innerHTML='<table class="data-table"><thead><tr><th>Source</th><th>Status</th></tr></thead><tbody>'
-      +sources.data.map(function(s){ return'<tr><td>'+esc(s.name)+'</td><td><span class="badge ok">Active</span></td></tr>'; }).join('')
-      +'</tbody></table>';
-  }
-}
-function swAdmin(tab,btn){
-  document.querySelectorAll('.admin-sec').forEach(function(s){ s.classList.remove('active'); });
-  document.querySelectorAll('.admin-tab').forEach(function(b){ b.classList.remove('active'); });
-  $('adm-'+tab).classList.add('active'); btn.classList.add('active');
-}
-
-// â”€â”€ CONTACT â”€â”€
-async function submitContact(){
-  var name=$('cf-name').value.trim();
-  var email=$('cf-email').value.trim();
-  var subject=$('cf-subject').value;
-  var message=$('cf-message').value.trim();
-  var err=$('cf-error');
-  err.classList.remove('show');
-  if(!name||!email||!subject||!message){
-    err.textContent='Please fill in all fields before sending.';
-    err.classList.add('show');
-    return;
-  }
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    err.textContent='Please enter a valid email address.';
-    err.classList.add('show');
-    return;
-  }
-  var btn=$('cf-submit');
-  btn.disabled=true; btn.textContent='Sending…';
-  try{
-    // Replace the action URL below with your Formspree endpoint, e.g.:
-    // https://formspree.io/f/YOUR_FORM_ID
-    var res=await fetch('https://formspree.io/f/xzdagqnk',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({name:name,email:email,subject:subject,message:message})
-    });
-    if(res.ok){
-      $('contact-form-body').style.display='none';
-      $('contact-success').style.display='block';
-    } else {
-      err.textContent='Something went wrong. Please try again or email us directly.';
-      err.classList.add('show');
-      btn.disabled=false; btn.textContent='Send message';
-    }
-  } catch(e){
-    err.textContent='Could not send. Please check your connection and try again.';
-    err.classList.add('show');
-    btn.disabled=false; btn.textContent='Send message';
-  }
-}
-function resetContact(){
-  $('cf-name').value=''; $('cf-email').value=''; $('cf-subject').value=''; $('cf-message').value='';
-  $('cf-error').classList.remove('show');
-  $('cf-submit').disabled=false; $('cf-submit').textContent='Send message';
-  $('contact-form-body').style.display='block';
-  $('contact-success').style.display='none';
-}
-
-// â”€â”€ FAQ â”€â”€
-function faqToggle(btn){
-  var item=btn.closest('.faq-item');
-  item.classList.toggle('open');
-}
-function faqTab(id,btn){
-  document.querySelectorAll('.faq-group').forEach(function(g){g.style.display='none';});
-  document.querySelectorAll('.faq-tab-btn').forEach(function(b){b.classList.remove('active');});
-  document.getElementById('faq-'+id).style.display='block';
-  btn.classList.add('active');
-}
-
-// â”€â”€ INIT â”€â”€
-updateNav();
-go('home');
-if(tok&&CU) loadSavedIds();
+document.addEventListener('DOMContentLoaded', () => {
+  fetchJobs();
+  loadStats();
+});
 </script>
-
-<!-- â”€â”€ MOBILE BOTTOM TAB BAR â”€â”€ -->
-<div class="mob-tabs" id="mob-tabs">
-  <button class="mob-tab active" id="mobt-home" onclick="go('home')">
-    <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1z"/><polyline points="9 21 9 13 15 13 15 21"/></svg>
-    Home
-  </button>
-  <button class="mob-tab" id="mobt-search" onclick="go('search')">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
-    Browse
-  </button>
-  <button class="mob-tab" id="mobt-saved" onclick="go('saved')" style="display:none">
-    <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-    Saved
-  </button>
-  <button class="mob-tab" id="mobt-tracker" onclick="go('tracker')" style="display:none">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-    Tracker
-  </button>
-  <button class="mob-tab" id="mobt-profile" onclick="CU?go('profile'):openModal('login')" style="display:none">
-    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    <span id="mobt-profile-label"></span>
-</button>
-</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
