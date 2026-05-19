@@ -563,11 +563,11 @@ if (searchInput) {
       <div style="display:flex;gap:10px;margin-bottom:.75rem">
         <input class="f-input" id="new-skill" placeholder="Skill name (e.g. PostgreSQL)" style="margin-bottom:0;flex:1" />
         <div class="star-row" id="new-skill-stars">
-          <span class="star on" data-v="1" onclick="setNewSkillStar(1)">â˜…</span>
-          <span class="star on" data-v="2" onclick="setNewSkillStar(2)">â˜…</span>
-          <span class="star on" data-v="3" onclick="setNewSkillStar(3)">â˜…</span>
-          <span class="star" data-v="4" onclick="setNewSkillStar(4)">â˜…</span>
-          <span class="star" data-v="5" onclick="setNewSkillStar(5)">â˜…</span>
+          <span class="star on" data-v="1" onclick="setNewSkillStar(1)">&#9733;</span>
+          <span class="star on" data-v="2" onclick="setNewSkillStar(2)">&#9733;</span>
+          <span class="star on" data-v="3" onclick="setNewSkillStar(3)">&#9733;</span>
+          <span class="star" data-v="4" onclick="setNewSkillStar(4)">&#9733;</span>
+          <span class="star" data-v="5" onclick="setNewSkillStar(5)">&#9733;</span>
         </div>
       </div>
       <button class="add-btn" onclick="addSkill()">+ Add Skill</button>
@@ -711,19 +711,19 @@ var adminLoaded = false;
 function $(id){ return document.getElementById(id); }
 function esc(s){ if(!s)return''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function ago(d){ if(!d)return''; var diff=Math.floor((Date.now()-new Date(d))/86400000); if(diff===0)return'Today'; if(diff===1)return'Yesterday'; if(diff<7)return diff+'d ago'; if(diff<30)return Math.floor(diff/7)+'w ago'; return Math.floor(diff/30)+'mo ago'; }
-function fmtSal(mn,mx,c){ if(!mn&&!mx)return null; c=c||'â‚±'; var f=function(n){return n>=1000?Math.round(n/1000)+'k':n;}; if(mn&&mx)return c+f(mn)+'â€“'+f(mx); if(mx)return'Up to '+c+f(mx); return c+f(mn)+'+'; }
+function fmtSal(mn,mx,c){ if(!mn&&!mx)return null; c=c||'\u20B1'; var f=function(n){return n>=1000?Math.round(n/1000)+'k':n;}; if(mn&&mx)return c+f(mn)+'\u2013'+f(mx); if(mx)return'Up to '+c+f(mx); return c+f(mn)+'+'; }
 function ini(n){ return(n||'?').trim()[0].toUpperCase(); }
 function toast(m,d){ var t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); },d||3000); }
 function starsHtml(n){
   var h=''; for(var i=1;i<=5;i++){
-    if(i<=n) h+='<span class="stars"><span class="on">â˜…</span></span>';
-    else h+='<span class="stars"><span class="off">â˜…</span></span>';
+    if(i<=n) h+='<span class="stars"><span class="on">&#9733;</span></span>';
+    else h+='<span class="stars"><span class="off">&#9733;</span></span>';
   }
   return '<div class="stars">'+h+'</div>';
 }
 function starsHtmlInline(n){
   var h='<div class="stars">';
-  for(var i=1;i<=5;i++) h+='<span class="'+(i<=n?'on':'off')+'">â˜…</span>';
+  for(var i=1;i<=5;i++) h+='<span class="'+ (i<=n?'on':'off') +'">&#9733;</span>';
   return h+'</div>';
 }
 
@@ -1194,7 +1194,7 @@ function renderExpList(exp){
     return'<div class="nested-item">'
       +'<button class="nested-del" onclick="delExp(\''+e.id+'\')">âœ•</button>'
       +'<div style="font-weight:600;font-size:.95rem">'+esc(e.job_title)+'</div>'
-      +'<div style="font-size:.88rem;color:var(--text-sub);margin-top:3px">'+esc(e.company)+(e.start_date?' Â· '+e.start_date.slice(0,7):'')+(e.end_date?' â€“ '+e.end_date.slice(0,7):e.start_date?' â€“ Present':'')+'</div>'
+      +'<div style="font-size:.88rem;color:var(--text-sub);margin-top:3px">'+esc(e.company)+(e.start_date?' Â· '+e.start_date.slice(0,7):'')+(e.end_date?' — '+e.end_date.slice(0,7):e.start_date?' — Present':'')+'</div>'
       +'</div>';
   }).join('');
 }
