@@ -1,0 +1,6 @@
+var Tips={
+  data:[{icon:'ðŸ“„',title:'How to Write a Winning Resume',desc:'Stand out with a clear, ATS-friendly resume.'},{icon:'ðŸŽ¤',title:'Common BPO & CSR Interview Questions',desc:'Prepare for the 20 most asked questions.'},{icon:'ðŸ’°',title:'How to Negotiate Your Salary',desc:'Know your worth and negotiate confidently.'},{icon:'ðŸ’¼',title:'Building a VA Portfolio',desc:'Build a compelling VA portfolio from scratch.'},{icon:'ðŸŽ¯',title:'LinkedIn Profile Optimization',desc:'Get noticed by recruiters on LinkedIn.'},{icon:'âœ‰ï¸',title:'Cold Email Templates',desc:'Proven cold email templates for job seekers.'},{icon:'ðŸ“±',title:'Remote Work Setup Guide',desc:'Everything for a professional WFH setup.'},{icon:'ðŸ§ ',title:'Acing the Final Interview',desc:'Close strong with confidence.'},{icon:'ðŸ”„',title:'Career Shifting at Any Age',desc:'Transition to a new career successfully.'}],
+  inited:false,
+  init:function(){ if(Tips.inited) return; Tips.inited=true; var c=App.$('tips-list'); if(!c) return; c.innerHTML=Tips.data.map(function(t){ return '<div class="tip-card"><div class="tip-icon">'+t.icon+'</div><div class="tip-body"><div class="tip-title">'+App.esc(t.title)+'</div><div class="tip-desc">'+App.esc(t.desc)+'</div><span class="tip-link">Read Guide â†’</span></div><span class="tip-arrow">â€º</span></div>'; }).join(''); }
+};
+

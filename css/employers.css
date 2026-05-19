@@ -1,0 +1,25 @@
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1rem;
+  max-width:1200px;
+  margin:0 auto;
+  padding:1rem;
+}
+
+.feature-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:1.5rem;
+}
+
+.feature-badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  background:#eef2ff;
+  font-size:.75rem;
+  font-weight:700;
+}
