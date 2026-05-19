@@ -89,7 +89,7 @@ if (searchInput) {
 <!-- â”€â”€ HOME â”€â”€ -->
 <div class="page" id="page-home">
   <!-- OLD HERO REMOVED --><div style="display:none">
-    <div class="eyebrow">ðŸ‡µðŸ‡­ Philippines Job Board</div>
+    <div class="eyebrow">PH Philippines Job Board</div>
     <h1>Find your next <em>great job</em><br/>in the Philippines</h1>
     <p>Thousands of verified openings â€” BPO, tech, remote, and more.</p>
     <div class="search-box">
@@ -239,7 +239,7 @@ if (searchInput) {
               <span>How do I save jobs to review later?</span>
               <span class="faq-chevron">&#8964;</span>
             </button>
-            <div class="faq-a">Click the bookmark icon on any listing while browsing. All saved jobs appear under the Saved tab in your account. You need to be signed in for this feature to work.</div>
+            <div class="faq-a">Click the bookmark icon on any listing while browsing. All saved roles appear under the Saved tab in your account. You need to be signed in for this feature to work.</div>
           </div>
         </div>
 
@@ -328,7 +328,7 @@ if (searchInput) {
         <p style="color:var(--text-sub);font-size:.92rem;line-height:1.75;margin-bottom:2rem">Interested in joining our operational talent network or have questions about structured remote roles? Fill out the form and we'll get back to you within one business day.</p>
         <div style="display:flex;flex-direction:column;gap:12px">
           <div class="contact-meta-item">
-            <div class="contact-meta-icon">âœ‰</div>
+            <div class="contact-meta-icon">&#9993;</div>
             <div>
               <div class="contact-meta-label">Email us directly</div>
               <div class="contact-meta-val">hello@jobcopilotph.com</div>
@@ -342,7 +342,7 @@ if (searchInput) {
             </div>
           </div>
           <div class="contact-meta-item">
-            <div class="contact-meta-icon">ðŸ‡µðŸ‡­</div>
+            <div class="contact-meta-icon">PH</div>
             <div>
               <div class="contact-meta-label">Based in</div>
               <div class="contact-meta-val">Philippines (PHT, UTC+8)</div>
@@ -388,7 +388,7 @@ if (searchInput) {
 
         <!-- Success state -->
         <div id="contact-success" style="display:none;text-align:center;padding:2.5rem 1rem">
-          <div style="width:52px;height:52px;border-radius:50%;background:var(--remote-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.4rem">âœ“</div>
+          <div style="width:52px;height:52px;border-radius:50%;background:var(--remote-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.4rem">&#10003;</div>
           <h3 style="font-family:var(--font-d);font-size:1.4rem;font-weight:500;margin-bottom:.5rem">Message sent!</h3>
           <p style="color:var(--text-sub);font-size:.9rem">Thanks for reaching out. We'll reply within one business day.</p>
           <button class="outline-btn" onclick="resetContact()" style="margin-top:1.5rem;font-size:.85rem;padding:.6rem 1.5rem">Send another</button>
@@ -437,7 +437,7 @@ if (searchInput) {
         <div>
           <div class="footer-col-title">Contact</div>
           <div class="footer-contact-item">
-            <div class="footer-contact-icon">âœ‰</div>
+            <div class="footer-contact-icon">&#9993;</div>
             <div>
               <div class="footer-contact-label">Email</div>
               <div class="footer-contact-val">hello@jobcopilotph.com</div>
@@ -451,7 +451,7 @@ if (searchInput) {
             </div>
           </div>
           <div class="footer-contact-item">
-            <div class="footer-contact-icon">ðŸ‡µðŸ‡­</div>
+            <div class="footer-contact-icon">PH</div>
             <div>
               <div class="footer-contact-label">Based in</div>
               <div class="footer-contact-val">Philippines (PHT, UTC+8)</div>
@@ -828,7 +828,7 @@ async function submitAuth(){
     } else {
       var name=$('m-name').value.trim(), role=$('m-role').value;
       res=await api('/api/auth/register',{method:'POST',body:JSON.stringify({email:email,password:pass,full_name:name,role:role})});
-      if(res.success){ toast('âœ‰ï¸ Check your email to confirm.'); closeModal(); $('m-submit').disabled=false; renderModal(); return; }
+      if(res.success){ toast('&#9993;ï¸ Check your email to confirm.'); closeModal(); $('m-submit').disabled=false; renderModal(); return; }
     }
     if(!res.success) throw new Error(res.error||'Authentication failed');
     tok=res.data.session.access_token; CU=res.data.user;
@@ -1138,7 +1138,7 @@ function calcStrength(){
   if(p.experience&&p.experience.length) sc++;
   if(p.education&&p.education.length) sc++;
   var b=$('strength-badge');
-  if(sc>=5){ b.textContent='âœ“ Profile 100% Complete'; b.classList.remove('partial'); }
+  if(sc>=5){ b.textContent='&#10003; Profile 100% Complete'; b.classList.remove('partial'); }
   else if(sc>=3){ b.textContent='Profile '+Math.round(sc/5*100)+'% Complete'; b.classList.add('partial'); }
   else{ b.textContent='Building profileâ€¦ '+Math.round(sc/5*100)+'%'; b.classList.add('partial'); }
 }
@@ -1153,7 +1153,7 @@ async function saveProfile(){
     resume_url:  $('p-resume-url').value,
     availability:$('p-avail').value
   })},true);
-  if(d.success){ Object.assign(profData,d.data); toast('Profile saved âœ“'); calcStrength(); } else toast('Error: '+d.error);
+  if(d.success){ Object.assign(profData,d.data); toast('Profile saved &#10003;'); calcStrength(); } else toast('Error: '+d.error);
 }
 
 // Skills
@@ -1257,7 +1257,7 @@ function pubProfileHtml(p){
   h+='<div class="pub-av">'+ini(p.full_name)+'</div>';
   h+='<div class="pub-meta">';
   h+='<div style="display:inline-flex;align-items:center;gap:6px;background:'+(complete?'var(--remote-bg)':'var(--gold-bg)')+';color:'+(complete?'var(--remote-txt)':'var(--gold-txt)')+';padding:4px 12px;border-radius:100px;font-size:.75rem;font-weight:600;margin-bottom:.5rem">';
-  h+=(complete?'âœ“ Profile 100% Complete':'Profile Ready')+'</div>';
+  h+=(complete?'&#10003; Profile 100% Complete':'Profile Ready')+'</div>';
   h+='<h1>'+esc(p.full_name||'Candidate')+'</h1>';
   h+='<div class="pub-contact">';
   if(p.job_title) h+='ðŸ’¼ '+esc(p.job_title)+'<br/>';
@@ -1333,7 +1333,7 @@ async function submitJob(){
   var title=$('pj-title').value.trim(), company=$('pj-company').value.trim(), desc=$('pj-desc').value.trim();
   if(!title||!company||!desc){ toast('Title, company, and description are required.'); return; }
   var d=await api('/api/employer/jobs',{method:'POST',body:JSON.stringify({title:title,company:company,city:$('pj-city').value.trim(),remote_type:$('pj-remote').value,employment_type:$('pj-type').value,salary_min:parseInt($('pj-sal-min').value)||null,salary_max:parseInt($('pj-sal-max').value)||null,description:desc,job_url:$('pj-url').value.trim()})},true);
-  if(d.success){ toast('Job posted! âœ“'); togglePostForm(); loadEmpJobs(); }
+  if(d.success){ toast('Job posted! &#10003;'); togglePostForm(); loadEmpJobs(); }
   else toast('Error: '+(d.error||'Post failed'));
 }
 async function loadEmpJobs(){
@@ -1468,5 +1468,6 @@ if(tok&&CU) loadSavedIds();
 </div>
 </body>
 </html>
+
 
 
