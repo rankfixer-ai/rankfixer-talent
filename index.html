@@ -408,8 +408,9 @@ if (searchInput) {
           <div class="nav-logo" onclick="go('home')" style="cursor:pointer">RankFixer<span>Careers</span></div>
           <p class="footer-tagline">RankFixer Talent is part of the RankFixer operational ecosystem — structured remote work, operational reliability, and professionally managed remote teams.</p>
         </div>
+        </div>
 
-        <!-- Quick links -->
+        <!-- Talent Network -->
         <div>
           <div class="footer-col-title">Talent Network</div>
           <ul class="footer-links">
@@ -421,15 +422,15 @@ if (searchInput) {
           </ul>
         </div>
 
-        <!-- Job categories -->
+        <!-- Operational Structure -->
         <div>
           <div class="footer-col-title">Operational Structure</div>
           <ul class="footer-links">
-            <li><button onclick="qSearch('Remote Operations')">Remote Operations</button></li>
-            <li><button onclick="qSearch('Client Support')">Client Support</button></li>
-            <li><button onclick="qSearch('AI-Native Workflows')">AI-Native Workflows</button></li>
-            <li><button onclick="qSearch('Marketing Operations')">Marketing Operations</button></li>
-            <li><button onclick="qSearch('Administrative Support')">Administrative Support</button></li>
+            <li><a href="/operations" onclick="event.preventDefault();go('home')">Remote Operations</a></li>
+            <li><a href="/operations/client-support" onclick="event.preventDefault();go('home')">Client Support</a></li>
+            <li><a href="/operations/ai-workflows" onclick="event.preventDefault();go('home')">AI-Assisted Operations</a></li>
+            <li><a href="/operations/marketing" onclick="event.preventDefault();go('home')">Marketing Operations</a></li>
+            <li><a href="/operations/admin-support" onclick="event.preventDefault();go('home')">Administrative Support</a></li>
           </ul>
         </div>
 
@@ -437,21 +438,21 @@ if (searchInput) {
         <div>
           <div class="footer-col-title">Contact</div>
           <div class="footer-contact-item">
-            <div class="footer-contact-icon">&#9993;</div>
+            <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <div>
               <div class="footer-contact-label">Email</div>
-              <div class="footer-contact-val">info@rankfixer.co</div>
+              <a href="mailto:info@rankfixer.co" class="footer-contact-val">info@rankfixer.co</a>
             </div>
           </div>
           <div class="footer-contact-item">
-            <div class="footer-contact-icon">â±</div>
+            <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div>
               <div class="footer-contact-label">Response time</div>
               <div class="footer-contact-val">Within 1 business day</div>
             </div>
           </div>
           <div class="footer-contact-item">
-            <div class="footer-contact-icon">PH</div>
+            <div class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
             <div>
               <div class="footer-contact-label">Based in</div>
               <div class="footer-contact-val">Philippines (PHT, UTC+8)</div>
@@ -463,10 +464,16 @@ if (searchInput) {
 
       <!-- Bottom bar -->
       <div class="footer-bottom">
-        <span class="footer-copy">Part of the RankFixer Managed Staffing Ecosystem.</span>
+        <span class="footer-copy">RankFixer Talent &mdash; Workforce Intelligence Layer &mdash; <a href="https://rankfixer.co" target="_blank" rel="noopener" style="color:inherit;opacity:.65">rankfixer.co</a></span>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
+          <a href="/privacy" onclick="event.preventDefault();go('home')">Privacy Policy</a>
+          <a href="/terms" onclick="event.preventDefault();go('home')">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
         </div>
       </div>
     </div>
