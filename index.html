@@ -168,10 +168,10 @@ if (searchInput) {
       <p>When employer requirements shift, our operational readiness shifts with them — systematically, not reactively.</p>
     </div>
   </div>
-</section>`n<div class="stats-bar">
+</section><div class="stats-bar">
     <div class="stat"><span class="stat-num" id="stat-total">—</span><div class="stat-label">Active Roles</div></div>
     <div class="stat"><span class="stat-num" id="stat-remote">—</span><div class="stat-label">Remote Operations</div></div>
-    <div class="stat"><span class="stat-num">Free</span><div class="stat-label">To browse & apply</div></div>
+    <div class="stat"><span class="stat-num">Managed</span><div class="stat-label">Operational Teams</div></div>
   </div>
   <div class="section">
     <div class="section-hdr">
@@ -851,7 +851,7 @@ async function loadHome(){
     if(s.success){ $('stat-total').textContent=(s.data.totalJobs||0).toLocaleString(); $('stat-remote').textContent=(s.data.remoteJobs||0).toLocaleString(); }
     var j=await api('/api/jobs?limit=6');
     $('home-jobs').innerHTML=(j.success&&j.data.length)?j.data.map(jobCardHtml).join(''):'<div class="empty"><div class="empty-icon">ðŸ”</div><h3>No jobs yet</h3></div>';
-  } catch(e){ $('home-jobs').innerHTML='<div class="empty"><p>Could not load jobs.</p></div>'; }
+  } catch(e){ $('home-jobs').innerHTML='<div class="rf-empty-state"><h3>Refreshing Talent Network</h3><p>We are updating our operational listings. Please check back shortly.</p></div>'; }
 }
 function heroSearch(){ $('s-kw').value=$('h-kw').value.trim(); go('search'); }
 function qSearch(kw){ $('s-kw').value=kw; go('search'); }
