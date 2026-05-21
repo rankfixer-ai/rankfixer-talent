@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Job Copilot PH — Find Work in the Philippines | 3,500+ Jobs</title>
-<meta name="description" content="Browse 3,500+ verified job openings in the Philippines. BPO, tech, remote, virtual assistant, and more. Free to search and apply. New jobs added daily.">
-<meta property="og:title" content="Job Copilot PH — Find Work in the Philippines">
-<meta property="og:description" content="Browse 3,500+ verified job openings in the Philippines. Free to search and apply.">
-<meta property="og:url" content="https://jobcopilotph.vercel.app">
+<title>Job Copilot PH — Operational Workforce Platform | RankFixer Ecosystem</title>
+<meta name="description" content="A structured operational workforce platform connecting vetted Philippine talent with remote-ready employers. Part of the RankFixer managed staffing ecosystem.">
+<meta property="og:title" content="Job Copilot PH — Operational Workforce Platform">
+<meta property="og:description" content="Structured operational workforce platform. Part of the RankFixer managed staffing ecosystem.">
+<meta property="og:url" content="https://jobs.rankfixer.co">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,7 +52,7 @@ if (searchInput) {
   <div class="modal">
     <button class="modal-x" onclick="closeModal()">✕</button>
     <h2 id="m-title">Welcome back.</h2>
-    <p class="modal-sub" id="m-sub">Don't have an account? <span onclick="switchMode()">Sign up free</span></p>
+    <p class="modal-sub" id="m-sub">No account yet? <span onclick="switchMode()">Create one</span></p>
     <div id="m-name-wrap" style="display:none">
       <div class="f-field"><label class="f-label">Full Name</label><input class="f-input" id="m-name" placeholder="Juan dela Cruz" /></div>
       <div class="f-field"><label class="f-label">I am a</label>
@@ -71,18 +71,18 @@ if (searchInput) {
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo" onclick="go('home')">PH<span>Jobs</span></div>
+  <div class="nav-logo" onclick="go('home')">Job Copilot <span>PH</span></div>
   <div class="nav-links">
-    <button class="nav-btn" id="nav-home"     onclick="go('home')">Home</button>
-    <button class="nav-btn" id="nav-search"   onclick="go('search')">Browse Jobs</button>
+    <button class="nav-btn" id="nav-home"     onclick="go('home')">Opportunities</button>
+    <button class="nav-btn" id="nav-search"   onclick="go('search')">Browse Roles</button>
     <button class="nav-btn" id="nav-saved"    onclick="go('saved')"    style="display:none">Saved</button>
     <button class="nav-btn" id="nav-tracker"  onclick="go('tracker')"  style="display:none">Tracker</button>
-    <button class="nav-btn" id="nav-employer" onclick="go('employer')" style="display:none">Post a Job</button>
+    <button class="nav-btn" id="nav-employer" onclick="go('employer')" style="display:none">Post a Role</button>
     <button class="nav-btn" id="nav-admin"    onclick="go('admin')"    style="display:none">Admin</button>
   </div>
   <div class="nav-auth" id="nav-auth">
     <button class="nav-signin" onclick="openModal('login')">Sign In</button>
-    <button class="nav-signup" onclick="openModal('register')">Sign Up</button>
+    <button class="nav-signup" onclick="openModal('register')">Join Network</button>
   </div>
 </nav>
 
@@ -261,7 +261,7 @@ if (searchInput) {
             <div class="contact-meta-icon">✉</div>
             <div>
               <div class="contact-meta-label">Email us directly</div>
-              <div class="contact-meta-val">hello@jobcopilotph.com</div>
+              <div class="contact-meta-val">info@rankfixer.co</div>
             </div>
           </div>
           <div class="contact-meta-item">
@@ -335,31 +335,31 @@ if (searchInput) {
 
         <!-- Brand -->
         <div class="footer-brand">
-          <div class="nav-logo" onclick="go('home')" style="cursor:pointer">PH<span>Jobs</span></div>
-          <p class="footer-tagline">Your go-to job board for finding work in the Philippines — BPO, tech, remote, and more. Free to search and apply.</p>
+          <div class="nav-logo" onclick="go('home')" style="cursor:pointer">Job Copilot <span>PH</span></div>
+          <p class="footer-tagline">Part of the RankFixer operational ecosystem — workforce intelligence, structured preparation, and professionally managed remote teams.</p>
         </div>
 
         <!-- Quick links -->
         <div>
-          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-col-title">Talent Network</div>
           <ul class="footer-links">
-            <li><button onclick="go('home')">Home</button></li>
-            <li><button onclick="go('search')">Browse Jobs</button></li>
-            <li><button onclick="go('employer')">Post a Job</button></li>
-            <li><button onclick="openModal('register')">Create Account</button></li>
+            <li><button onclick="go('home')">Opportunities</button></li>
+            <li><button onclick="go('search')">Browse Roles</button></li>
+            <li><button onclick="go('employer')">Post a Role</button></li>
+            <li><button onclick="openModal('register')">Join the Network</button></li>
             <li><button onclick="openModal('login')">Sign In</button></li>
           </ul>
         </div>
 
         <!-- Job categories -->
         <div>
-          <div class="footer-col-title">Browse by Category</div>
+          <div class="footer-col-title">Operational Structure</div>
           <ul class="footer-links">
-            <li><button onclick="qSearch('CSR')">CSR / BPO</button></li>
-            <li><button onclick="qSearch('Virtual Assistant')">Virtual Assistant</button></li>
-            <li><button onclick="qSearch('Remote')">Remote / WFH</button></li>
-            <li><button onclick="qSearch('Developer')">Developer</button></li>
-            <li><button onclick="qSearch('Data Entry')">Data Entry</button></li>
+            <li><button onclick="qSearch('Remote Operations')">Remote Operations</button></li>
+            <li><button onclick="qSearch('Client Support')">Client Support</button></li>
+            <li><button onclick="qSearch('AI-Assisted Workflows')">AI-Assisted Workflows</button></li>
+            <li><button onclick="qSearch('Marketing Operations')">Marketing Operations</button></li>
+            <li><button onclick="qSearch('Administrative Support')">Administrative Support</button></li>
           </ul>
         </div>
 
@@ -370,7 +370,7 @@ if (searchInput) {
             <div class="footer-contact-icon">✉</div>
             <div>
               <div class="footer-contact-label">Email</div>
-              <div class="footer-contact-val">hello@jobcopilotph.com</div>
+              <div class="footer-contact-val">info@rankfixer.co</div>
             </div>
           </div>
           <div class="footer-contact-item">
@@ -393,7 +393,7 @@ if (searchInput) {
 
       <!-- Bottom bar -->
       <div class="footer-bottom">
-        <span class="footer-copy">© 2025 Job Copilot PH. All rights reserved.</span>
+        <span class="footer-copy">Part of the RankFixer Managed Staffing Ecosystem</span>
         <div class="footer-legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
@@ -409,11 +409,11 @@ if (searchInput) {
   <div class="search-page">
     <div class="toolbar">
       <div class="toolbar-wrap">
-        <input class="toolbar-input" id="s-kw" placeholder="Job title, skill, keyword…" oninput="fetchSug(this.value)" onkeydown="if(event.key==='Enter')doSearch()" style="width:100%" />
+        <input class="toolbar-input" id="s-kw" placeholder="Search operational roles…" oninput="fetchSug(this.value)" onkeydown="if(event.key==='Enter')doSearch()" style="width:100%" />
         <div class="suggest-drop" id="sug-box"></div>
       </div>
       <input class="toolbar-input" id="s-city" placeholder="City (e.g. Davao, Manila)" onkeydown="if(event.key==='Enter')doSearch()" style="max-width:180px" />
-      <label class="remote-label"><div class="toggle" id="rem-tog" onclick="togRem()"></div>Remote only</label>
+      <label class="remote-label"><div class="toggle" id="rem-tog" onclick="togRem()"></div>Remote Operations</label>
       <button class="toolbar-btn" onclick="doSearch()">Search</button>
     </div>
     <div class="results-meta" id="res-meta" style="display:none"><span id="res-count"></span></div>
@@ -467,7 +467,7 @@ if (searchInput) {
         <div><label class="f-label">Mobile</label><input class="f-input" id="p-phone" placeholder="+63 9XX XXX XXXX" /></div>
       </div>
       <div class="f-row">
-        <div><label class="f-label">Looking for</label><input class="f-input" id="p-jobtitle" placeholder="Virtual Assistant, CSR…" /></div>
+        <div><label class="f-label">Target role / discipline</label><input class="f-input" id="p-jobtitle" placeholder="e.g. Executive Assistant, Marketing Operations…" /></div>
         <div><label class="f-label">Location</label><input class="f-input" id="p-location" placeholder="Davao City" /></div>
       </div>
       <div class="f-row">
@@ -573,15 +573,15 @@ if (searchInput) {
         <h1>Hire great talent<br/><em style="font-style:italic;color:var(--accent)">in the Philippines.</em></h1>
         <p>Post jobs directly to thousands of active job seekers — BPO, tech, remote, and more. Free to start.</p>
       </div>
-      <button class="emp-cta" onclick="togglePostForm()">+ Post a Job</button>
+      <button class="emp-cta" onclick="togglePostForm()">+ Post a Role</button>
     </div>
     <div class="emp-stats">
-      <div class="emp-stat"><span class="emp-stat-num" id="emp-total">—</span><div class="emp-stat-label">Active job seekers</div></div>
-      <div class="emp-stat"><span class="emp-stat-num" id="emp-remote">—</span><div class="emp-stat-label">Remote seekers</div></div>
-      <div class="emp-stat"><span class="emp-stat-num">Free</span><div class="emp-stat-label">To post</div></div>
+      <div class="emp-stat"><span class="emp-stat-num" id="emp-total">—</span><div class="emp-stat-label">Active candidates</div></div>
+      <div class="emp-stat"><span class="emp-stat-num" id="emp-remote">—</span><div class="emp-stat-label">Remote-ready</div></div>
+      <div class="emp-stat"><span class="emp-stat-num">Direct</span><div class="emp-stat-label">No intermediaries</div></div>
     </div>
     <div class="post-form" id="post-form" style="display:none">
-      <h3 style="font-family:var(--font-d);font-size:1.3rem;font-weight:500;margin-bottom:1.5rem">Post a New Job</h3>
+      <h3 style="font-family:var(--font-d);font-size:1.3rem;font-weight:500;margin-bottom:1.5rem">Post a New Role</h3>
       <div class="form-grid">
         <div><label class="f-label">Job Title *</label><input class="f-input" id="pj-title" placeholder="e.g. Virtual Assistant" /></div>
         <div><label class="f-label">Company *</label><input class="f-input" id="pj-company" placeholder="Your company name" /></div>
@@ -693,7 +693,7 @@ function updateNav(){
       +'</div></div>';
   } else {
     $('nav-auth').innerHTML='<button class="nav-signin" onclick="openModal(\'login\')">Sign In</button>'
-      +'<button class="nav-signup" onclick="openModal(\'register\')">Sign Up</button>';
+      +'<button class="nav-signup" onclick="openModal(\'register\')">Join Network</button>';
   }
   $('nav-saved').style.display    = a?'':'none';
   $('nav-tracker').style.display  = a?'':'none';
@@ -741,9 +741,9 @@ function switchMode(){ modalMode=modalMode==='login'?'register':'login'; renderM
 function renderModal(){
   var isL=modalMode==='login';
   $('m-title').textContent=isL?'Welcome back.':'Create account.';
-  $('m-sub').innerHTML=isL?'Don\'t have an account? <span onclick="switchMode()">Sign up free</span>':'Already have an account? <span onclick="switchMode()">Sign in</span>';
+  $('m-sub').innerHTML=isL?'No account yet? <span onclick="switchMode()">Create one</span>':'Already have an account? <span onclick="switchMode()">Sign in</span>';
   $('m-name-wrap').style.display=isL?'none':'block';
-  $('m-submit').textContent=isL?'Sign In':'Create Account';
+  $('m-submit').textContent=isL?'Sign In':'Join the Network';
   $('m-error').classList.remove('show');
 }
 async function submitAuth(){
@@ -764,7 +764,7 @@ async function submitAuth(){
     tok=res.data.session.access_token; CU=res.data.user;
     localStorage.setItem('_jc_tok',tok);
     localStorage.setItem('_jc_user',JSON.stringify(CU));
-    closeModal(); updateNav(); toast('Welcome! 👋'); loadSavedIds();
+    closeModal(); updateNav(); toast('Welcome back.'); loadSavedIds();
   } catch(e){ err.textContent=e.message; err.classList.add('show'); }
   finally{ $('m-submit').disabled=false; renderModal(); }
 }
@@ -780,8 +780,8 @@ async function loadHome(){
     var s=await api('/api/stats');
     if(s.success){ $('stat-total').textContent=(s.data.totalJobs||0).toLocaleString(); $('stat-remote').textContent=(s.data.remoteJobs||0).toLocaleString(); }
     var j=await api('/api/jobs?limit=6');
-    $('home-jobs').innerHTML=(j.success&&j.data.length)?j.data.map(jobCardHtml).join(''):'<div class="empty"><div class="empty-icon">🔍</div><h3>No jobs yet</h3></div>';
-  } catch(e){ $('home-jobs').innerHTML='<div class="empty"><p>Could not load jobs.</p></div>'; }
+    $('home-jobs').innerHTML=(j.success&&j.data.length)?j.data.map(jobCardHtml).join(''):'<div class="empty"><div class="empty-icon">🔍</div><h3>Talent network syncing</h3></div>';
+  } catch(e){ $('home-jobs').innerHTML='<div class="empty"><p>Refreshing talent network…</p></div>'; }
 }
 function heroSearch(){ $('s-kw').value=$('h-kw').value.trim(); go('search'); }
 function qSearch(kw){ $('s-kw').value=kw; go('search'); }
@@ -798,9 +798,9 @@ function jobCardHtml(j){
     +(isR?'<span class="tag remote">🏠 Remote</span>':'')
     +(j.employment_type?'<span class="tag">'+esc(j.employment_type)+'</span>':'')
     +(sal?'<span class="tag salary">'+sal+'</span>':'')
-    +(isN?'<span class="tag new-tag">New</span>':'')
+    
     +'</div>'
-    +'<div class="card-footer"><span>'+esc(j.source&&j.source.name?j.source.name:'Job Board')+'</span><span>'+ago(j.posted_at)+'</span></div>'
+    +'<div class="card-footer"><span>'+esc(j.source&&j.source.name?j.source.name:'Operational Role')+'</span><span>'+ago(j.posted_at)+'</span></div>'
     +'</div>';
 }
 
@@ -817,10 +817,10 @@ async function doSearch(){
   var p=new URLSearchParams({page:1,limit:15});
   if(kw) p.set('keyword',kw); if(city) p.set('city',city); if(remOnly) p.set('remote','true');
   var d=await api('/api/jobs?'+p);
-  if(!d.success){ con.innerHTML='<div class="empty"><p>Could not load jobs.</p></div>'; return; }
+  if(!d.success){ con.innerHTML='<div class="empty"><p>Refreshing talent network…</p></div>'; return; }
   totPages=d.totalPages||1;
   if(meta){ meta.style.display='flex'; $('res-count').innerHTML='Showing <strong>'+d.data.length+'</strong> of <strong>'+(d.total||0).toLocaleString()+'</strong>'+(kw?' for "<strong>'+esc(kw)+'</strong>"':''); }
-  con.innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="empty"><div class="empty-icon">🔍</div><h3>No jobs found</h3><p>Try different keywords.</p></div>';
+  con.innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="empty"><div class="empty-icon">🔍</div><h3>No matching roles</h3><p>Try adjusting your search.</p></div>';
   renderPg();
 }
 async function loadJobsPage(pg){
@@ -833,7 +833,7 @@ async function loadJobsPage(pg){
   if(!d.success) return;
   totPages=d.totalPages||1;
   $('res-count').innerHTML='Showing <strong>'+d.data.length+'</strong> of <strong>'+(d.total||0).toLocaleString()+'</strong>'+(kw?' for "<strong>'+esc(kw)+'</strong>"':'');
-  $('jobs-con').innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="empty"><h3>No jobs found</h3></div>';
+  $('jobs-con').innerHTML=d.data.length?'<div class="jobs-list">'+d.data.map(listCardHtml).join('')+'</div>':'<div class="empty"><h3>No matching roles</h3></div>';
   renderPg(); window.scrollTo(0,0);
 }
 function listCardHtml(j){
@@ -844,7 +844,7 @@ function listCardHtml(j){
     +'<div class="list-body">'
     +'<div class="list-title">'+esc(j.title)+'</div>'
     +'<div class="list-company">'+esc(j.company||'Company')+(j.city?' · '+esc(j.city):'')+'</div>'
-    +'<div class="tags" style="margin-top:6px">'+(isR?'<span class="tag remote">Remote</span>':'')+(j.employment_type?'<span class="tag">'+esc(j.employment_type)+'</span>':'')+(sal?'<span class="tag salary">'+sal+'</span>':'')+'</div>'
+    +'<div class="tags" style="margin-top:6px">'+(isR?'<span class="tag remote">Remote Operations</span>':'')+(j.employment_type?'<span class="tag">'+esc(j.employment_type)+'</span>':'')+(sal?'<span class="tag salary">'+sal+'</span>':'')+'</div>'
     +(j.snippet?'<div class="list-snippet">'+esc(j.snippet)+'</div>':'')
     +'</div>'
     +'<div class="list-right"><span>'+ago(j.posted_at)+'</span>'
@@ -889,7 +889,7 @@ async function openJob(id,from){
   prevPage=from||'search'; go('detail');
   $('detail-con').innerHTML='<div class="loading"><div class="spinner"></div></div>';
   var d=await api('/api/jobs/'+id);
-  if(!d.success){ $('detail-con').innerHTML='<div class="empty"><p>Job not found.</p></div>'; return; }
+  if(!d.success){ $('detail-con').innerHTML='<div class="empty"><p>Role not found.</p></div>'; return; }
   $('detail-con').innerHTML=detailHtml(d.data);
   injectJobSchema(d.data);  // ADD THIS LINE
 
@@ -975,13 +975,13 @@ async function loadSavedIds(){
 async function togSave(id,btn){
   if(!CU){ openModal('login'); return; }
   var sv=!savedIds[id];
-  if(sv){ await api('/api/saved/'+id,{method:'POST'},true); savedIds[id]=true; btn.textContent='♥ Saved'; btn.classList.add('saved'); toast('Job saved!'); }
+  if(sv){ await api('/api/saved/'+id,{method:'POST'},true); savedIds[id]=true; btn.textContent='♥ Saved'; btn.classList.add('saved'); toast('Role saved!'); }
   else{ await api('/api/saved/'+id,{method:'DELETE'},true); delete savedIds[id]; btn.textContent='♡ Save'; btn.classList.remove('saved'); toast('Removed.'); }
 }
 async function togSaveDetail(id,btn){
   if(!CU){ openModal('login'); return; }
   var sv=!savedIds[id];
-  if(sv){ await api('/api/saved/'+id,{method:'POST'},true); savedIds[id]=true; btn.textContent='♥ Saved'; btn.classList.add('active'); toast('Job saved!'); }
+  if(sv){ await api('/api/saved/'+id,{method:'POST'},true); savedIds[id]=true; btn.textContent='♥ Saved'; btn.classList.add('active'); toast('Role saved!'); }
   else{ await api('/api/saved/'+id,{method:'DELETE'},true); delete savedIds[id]; btn.textContent='♡ Save Job'; btn.classList.remove('active'); toast('Removed.'); }
 }
 async function trackApp(id){
@@ -992,7 +992,7 @@ async function trackApp(id){
 
 // ── SAVED PAGE ──
 async function loadSaved(){
-  if(!CU){ $('saved-con').innerHTML='<div class="empty"><div class="empty-icon">🔖</div><h3>Sign in to see saved jobs</h3><p><button class="search-btn" style="display:inline-block;margin-top:1rem" onclick="openModal(\'login\')">Sign In</button></p></div>'; return; }
+  if(!CU){ $('saved-con').innerHTML='<div class="empty"><div class="empty-icon">🔖</div><h3>Sign in to see saved roles</h3><p><button class="search-btn" style="display:inline-block;margin-top:1rem" onclick="openModal(\'login\')">Sign In</button></p></div>'; return; }
   $('saved-con').innerHTML='<div class="loading"><div class="spinner"></div></div>';
   var d=await api('/api/saved',{},true);
   if(d.success&&d.data&&d.data.length){
@@ -1001,7 +1001,7 @@ async function loadSaved(){
       return jobCardHtml(j);
     }).join('')+'</div>';
   } else {
-    $('saved-con').innerHTML='<div class="empty"><div class="empty-icon">🔖</div><h3>No saved jobs</h3><p>Browse jobs and tap Save to add them here.</p></div>';
+    $('saved-con').innerHTML='<div class="empty"><div class="empty-icon">🔖</div><h3>No saved roles</h3><p>Browse roles and tap Save to add them here.</p></div>';
   }
 }
 
@@ -1288,8 +1288,8 @@ async function loadAdmin(){
   if(adminLoaded) return; adminLoaded=true;
   var stats=await api('/api/stats');
   if(stats.success){
-    $('adm-stats').innerHTML='<div class="admin-stat hl"><span class="admin-stat-num">'+(stats.data.totalJobs||0).toLocaleString()+'</span><div class="admin-stat-label">Active jobs</div></div>'
-      +'<div class="admin-stat"><span class="admin-stat-num">'+(stats.data.remoteJobs||0).toLocaleString()+'</span><div class="admin-stat-label">Remote jobs</div></div>'
+    $('adm-stats').innerHTML='<div class="admin-stat hl"><span class="admin-stat-num">'+(stats.data.totalJobs||0).toLocaleString()+'</span><div class="admin-stat-label">Active roles</div></div>'
+      +'<div class="admin-stat"><span class="admin-stat-num">'+(stats.data.remoteJobs||0).toLocaleString()+'</span><div class="admin-stat-label">Remote operations</div></div>'
       +'<div class="admin-stat"><span class="admin-stat-num">'+Math.round(((stats.data.remoteJobs||0)/(stats.data.totalJobs||1))*100)+'%</span><div class="admin-stat-label">Remote ratio</div></div>';
   }
   var sources=await api('/api/sources');
