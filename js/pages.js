@@ -15,7 +15,13 @@ function go(name){
   if(name==='saved')       loadSaved();
   if(name==='tracker')     loadTracker();
   if(name==='profile')     loadProfile();
-  if(name==='employer'){ loadEmpStats(); loadEmpJobs(); }
-  if(name==='admin')       loadAdmin();
+  if(name==='employer'){
+    if(!CU||!CU.user_metadata||(CU.user_metadata.role!=='employer'&&CU.user_metadata.role!=='admin')){ openModal('login'); return; }
+    loadEmpStats(); loadEmpJobs();
+  }
+  if(name==='admin'){
+    if(!CU||!CU.user_metadata||CU.user_metadata.role!=='admin'){ go('home'); toast('Access denied.'); return; }
+    loadAdmin();
+  }
 }
 function goBack(){ go(prevPage||'search'); }

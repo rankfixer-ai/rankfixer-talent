@@ -2,10 +2,10 @@
 function updateNav(){
   var a=!!CU;
   if(a){
-    var letter=ini(CU.name||CU.email||'U');
+    var cuName=(CU.user_metadata&&CU.user_metadata.full_name)||CU.email||'U'; var letter=ini(cuName);
     var sets=getSettings();
     $('nav-auth').innerHTML='<div class="nav-user-wrap" id="nav-user-wrap">'
-      +'<button class="nav-av-btn" onclick="togNavDD()" title="'+(CU.name||CU.email||'Account')+'">'+letter+'</button>'
+      +'<button class="nav-av-btn" onclick="togNavDD()" title="'+cuName+'">'+letter+'</button>'
       +'<div class="nav-dropdown" id="nav-dd">'
       +'<button class="nav-dd-item" onclick="closeNavDD();go(\'profile\')">👤 My Profile</button>'
       +'<button class="nav-dd-item" onclick="closeNavDD();go(\'saved\')">🔖 Saved Jobs</button>'
@@ -29,12 +29,12 @@ function updateNav(){
   }
   $('nav-saved').style.display    = a?'':'none';
   $('nav-tracker').style.display  = a?'':'none';
-  $('nav-employer').style.display = (a&&CU&&(CU.role==='employer'||CU.role==='admin'))?'':'none';
-  $('nav-admin').style.display    = (a&&CU&&CU.email&&CU.email.indexOf('admin')>-1)?'':'none';
+  $('nav-employer').style.display = (a&&CU&&CU.user_metadata&&(CU.user_metadata.role==='employer'||CU.user_metadata.role==='admin'))?'':'none';
+  $('nav-admin').style.display    = (a&&CU&&CU.user_metadata&&CU.user_metadata.role==='admin')?'':'none';
   // Sync mobile tabs
   var ms=$('mobt-saved');    if(ms) ms.style.display=a?'':'none';
   var mt=$('mobt-tracker');  if(mt) mt.style.display=a?'':'none';
-  var pl=$('mobt-profile-label'); if(pl) pl.textContent=a?(CU.name||'Profile'):'';
+  var pl=$('mobt-profile-label'); if(pl) pl.textContent=a?((CU.user_metadata&&CU.user_metadata.full_name)||CU.email||'Profile'):'';
   var mp=$('mobt-profile'); if(mp) mp.style.display=a?'':'none';
 }
 function togNavDD(){ var dd=$('nav-dd'); if(dd) dd.classList.toggle('open'); }

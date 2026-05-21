@@ -33,7 +33,7 @@ async function submitAuth(){
   finally{ $('m-submit').disabled=false; renderModal(); }
 }
 function doLogout(){
-  tok=null; CU=null; savedIds={};
+  tok=null; CU=null; savedIds={}; adminLoaded=false;
   localStorage.removeItem('_jc_tok'); localStorage.removeItem('_jc_user');
   updateNav(); go('home'); toast('Signed out.');
 }
