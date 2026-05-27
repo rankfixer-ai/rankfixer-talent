@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RankFixer Talent — Structured Remote Operations</title>
+<meta name="description" content="Curated operational roles within a managed remote workforce ecosystem. Facility-based teams, structured pathways, and continuity infrastructure built around reliability.">
+<meta property="og:title" content="RankFixer Talent — Structured Remote Operations">
+<meta property="og:description" content="Curated operational roles within a managed remote workforce ecosystem. Facility-based teams, structured pathways, and continuity infrastructure built around reliability.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jobs.rankfixer.co">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jobs.rankfixer.co">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:        #0E0E12;
+  --ink-soft:   #3A3A44;
+  --ink-muted:  #78787E;
+  --ink-faint:  #A8A8AE;
+  --canvas:     #F8F7F3;
+  --surface:    #FFFFFF;
+  --border:     #E2E0D8;
+  --border-soft:#ECEAE3;
+  --accent:     #0A3D2E;
+  --accent-mid: #145C44;
+  --accent-pale:#E8F3EE;
+  --accent-text:#0A3D2E;
+  --signal:     #1A4AB8;
+  --signal-pale:#EAF0FD;
+  --tag-bg:     #F0EFE9;
+  --ff-display: 'Newsreader', Georgia, serif;
+  --ff-body:    'IBM Plex Sans', system-ui, sans-serif;
+  --ff-mono:    'IBM Plex Mono', 'Courier New', monospace;
+  --r-sm:  4px;
+  --r-md:  6px;
+  --r-lg:  10px;
+  --nav-h: 60px;
+  --max:   1100px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(248,247,243,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.nav-logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo-mark svg { display: block; }
+.nav-logo-name {
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.nav-logo-sub {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 400;
+  margin-left: 2px;
+}
+.nav-divider { width: 1px; height: 18px; background: var(--border); margin: 0 20px; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+.nav-link {
+  padding: 6px 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-radius: var(--r-sm);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-link:hover { background: var(--border-soft); color: var(--ink); }
+.nav-link.active { color: var(--ink); font-weight: 500; }
+
+.nav-eco {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 16px;
+}
+.nav-eco-pill {
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-family: var(--ff-mono);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.nav-eco-pill:hover { border-color: var(--ink-faint); color: var(--ink-soft); }
+.nav-eco-pill.current {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.nav-actions { display: flex; align-items: center; gap: 8px; }
+.btn-ghost {
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-family: var(--ff-body);
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-ghost:hover { border-color: var(--ink-faint); color: var(--ink); }
+.btn-primary {
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-family: var(--ff-body);
+  color: #fff;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-primary:hover { background: var(--ink-soft); }
+
+/* ── LAYOUT ── */
+.page { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 0 72px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+}
+.hero-meta-dot {
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.hero-heading {
+  font-family: var(--ff-display);
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 680px;
+  margin-bottom: 20px;
+}
+.hero-heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 540px;
+  margin-bottom: 40px;
+}
+
+/* Search */
+.hero-search {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.hero-search:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(10,61,46,0.08);
+}
+.search-icon {
+  padding: 0 14px;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+.hero-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--ff-body);
+  font-size: 14.5px;
+  color: var(--ink);
+  background: transparent;
+  padding: 13px 0;
+}
+.hero-search input::placeholder { color: var(--ink-faint); }
+.search-sep { width: 1px; height: 24px; background: var(--border); flex-shrink: 0; }
+.search-select {
+  border: none;
+  outline: none;
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  background: transparent;
+  padding: 13px 14px;
+  cursor: pointer;
+  appearance: none;
+  min-width: 148px;
+}
+.search-btn {
+  padding: 10px 18px;
+  margin: 4px;
+  font-size: 13.5px;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.search-btn:hover { background: var(--accent-mid); }
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.hero-pill {
+  padding: 5px 12px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.hero-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-pale);
+}
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border-soft);
+}
+.stat-item { flex: 1; }
+.stat-item + .stat-item { border-left: 1px solid var(--border-soft); padding-left: 32px; }
+.stat-value {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--ff-mono);
+}
+
+/* ── ECOSYSTEM LAYER ── */
+.eco-section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+}
+.section-heading {
+  font-family: var(--ff-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  max-width: 560px;
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.eco-card {
+  background: var(--surface);
+  padding: 28px 28px 32px;
+  position: relative;
+}
+.eco-card-num {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.eco-card-layer {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.eco-card.current .eco-card-layer { color: var(--accent); }
+.eco-card:not(.current) .eco-card-layer { color: var(--ink-faint); }
+.eco-card-title {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.eco-card-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.eco-card-signals {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.eco-signal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.eco-signal-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.eco-card.current .eco-signal-dot { background: var(--accent); }
+.eco-card:not(.current) .eco-signal-dot { background: var(--border); }
+.eco-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: gap 0.15s;
+}
+.eco-card.current .eco-card-link { color: var(--accent); }
+.eco-card:not(.current) .eco-card-link { color: var(--ink-faint); pointer-events: none; }
+.eco-card.current { background: var(--surface); }
+.eco-card-current-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  padding: 3px 8px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  background: var(--accent-pale);
+  color: var(--accent-text);
+  border-radius: 20px;
+}
+
+/* ── PATHWAYS ── */
+.pathways-section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pathways-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 20px;
+}
+.view-all-link {
+  font-size: 13.5px;
+  color: var(--signal);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.view-all-link:hover { text-decoration: underline; }
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.pathway-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 22px 20px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.pathway-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.pathway-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-pale);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.pathway-icon svg { display: block; }
+.pathway-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.pathway-desc {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.pathway-count {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+/* ── INTELLIGENCE STRIP ── */
+.intelligence-strip {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.intel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-soft);
+}
+.intel-item {
+  background: var(--surface);
+  padding: 28px 28px;
+}
+.intel-num {
+  font-family: var(--ff-display);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.intel-label {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.intel-sub {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-family: var(--ff-mono);
+}
+
+/* ── OPPORTUNITIES ── */
+.opps-section {
+  padding: 72px 0 80px;
+}
+.opps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+.opps-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-family: var(--ff-body);
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--ink-faint); color: var(--ink); }
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.opps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+/* JOB CARD */
+.job-card {
+  background: var(--surface);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  transition: background 0.15s;
+}
+.job-card:hover { background: var(--canvas); }
+.job-card-main {}
+.job-card-company {
+  font-size: 11.5px;
+  font-family: var(--ff-mono);
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.job-card-title {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.job-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.job-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--ink-muted);
+}
+.job-meta-item svg { flex-shrink: 0; }
+.job-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.badge {
+  padding: 3px 9px;
+  font-size: 11px;
+  font-family: var(--ff-mono);
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.badge-operational {
+  background: var(--accent-pale);
+  color: var(--accent-text);
+}
+.badge-remote {
+  background: var(--signal-pale);
+  color: var(--signal);
+}
+.badge-ai {
+  background: #F3F0FF;
+  color: #5235B3;
+}
+.badge-managed {
+  background: #FEF6E0;
+  color: #7A5100;
+}
+.badge-type {
+  background: var(--tag-bg);
+  color: var(--ink-soft);
+}
+
+.job-card-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.job-salary {
+  font-family: var(--ff-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.job-salary-label {
+  font-size: 11px;
+  color: var(--ink-muted);
+  text-align: right;
+  margin-top: 2px;
+  font-family: var(--ff-mono);
+}
+.btn-view {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn-view:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-soft);
+}
+.pagination-info {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-family: var(--ff-mono);
+}
+.pagination-btns { display: flex; gap: 6px; }
+.page-btn {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.page-btn:hover { border-color: var(--ink-faint); color: var(--ink); }
+.page-btn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* ── TRUST SECTION ── */
+.trust-section {
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.trust-features { display: flex; flex-direction: column; gap: 0; }
+.trust-feature {
+  display: flex;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.trust-feature:first-child { padding-top: 0; }
+.trust-feature-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-pale);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.trust-feature-title {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.trust-feature-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.6);
+  padding: 56px 0 36px;
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 28px;
+}
+.footer-brand-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.footer-eco-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+}
+.footer-eco-link {
+  font-family: var(--ff-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  transition: color 0.15s;
+}
+.footer-eco-link:hover { color: rgba(255,255,255,0.7); }
+.footer-eco-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+}
+.footer-eco-dot.active { background: var(--accent-mid); }
+.footer-eco-dot.inactive { background: rgba(255,255,255,0.15); }
+
+.footer-col-title {
+  font-size: 11.5px;
+  font-family: var(--ff-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 14px;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-link {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-link:hover { color: rgba(255,255,255,0.9); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-copy {
+  font-size: 12.5px;
+  font-family: var(--ff-mono);
+  letter-spacing: 0.03em;
+}
+.footer-legal { display: flex; gap: 16px; }
+.footer-legal a {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+}
+.footer-legal a:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .eco-grid { grid-template-columns: 1fr; }
+  .pathways-grid { grid-template-columns: repeat(2, 1fr); }
+  .intel-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 680px) {
+  :root { --nav-h: 54px; }
+  .hero { padding: 48px 0 52px; }
+  .hero-heading { font-size: 34px; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .stat-item + .stat-item { border-left: none; padding-left: 0; border-top: 1px solid var(--border-soft); padding-top: 16px; }
+  .pathways-grid { grid-template-columns: 1fr; }
+  .intel-grid { grid-template-columns: 1fr; }
+  .job-card { grid-template-columns: 1fr; }
+  .job-card-actions { flex-direction: row; align-items: center; }
+  .footer-top { grid-template-columns: 1fr; }
+  .nav-eco { display: none; }
+  .nav-links { display: none; }
+}
+
+/* ── MISC ── */
+.sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+}
+.sep::before, .sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-soft);
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://jobs.rankfixer.co" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="1" y="1" width="5" height="5" rx="1" fill="white"/>
+          <rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.55"/>
+          <rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.55"/>
+          <rect x="8" y="8" width="5" height="5" rx="1" fill="white" opacity="0.3"/>
+        </svg>
+      </div>
+      <span class="nav-logo-name">RankFixer<span class="nav-logo-sub"> / Talent</span></span>
+    </a>
+
+    <div class="nav-divider"></div>
+
+    <div class="nav-links">
+      <a href="#opportunities" class="nav-link active">Opportunities</a>
+      <a href="#pathways" class="nav-link">Pathways</a>
+      <a href="#about" class="nav-link">About</a>
+    </div>
+
+    <div style="flex:1"></div>
+
+    <div class="nav-eco">
+      <a href="https://jobs.rankfixer.co" class="nav-eco-pill current">Sense</a>
+      <a href="https://ops.rankfixer.co" class="nav-eco-pill">Adapt</a>
+      <a href="https://rankfixer.co" class="nav-eco-pill">Deploy</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#signin" class="btn-ghost">Sign In</a>
+      <a href="#signup" class="btn-primary">Join Network</a>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="page">
+      <div class="hero-meta">
+        <span class="hero-meta-dot"></span>
+        Workforce Intelligence — Layer 1
+      </div>
+      <h1 class="hero-heading">
+        Operational roles built around<br>
+        <em>structured reliability.</em>
+      </h1>
+      <p class="hero-sub">
+        Every opportunity on this platform is a curated signal from our operational intelligence system — not a scraped listing, not a volume feed. Structured remote roles within a managed facility ecosystem.
+      </p>
+
+      <div class="hero-search">
+        <div class="search-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <input type="text" placeholder="Search operational roles…" id="hero-search-input">
+        <div class="search-sep"></div>
+        <select class="search-select" id="hero-search-category">
+          <option value="">All Pathways</option>
+          <option value="remote-ops">Remote Operations</option>
+          <option value="client-support">Client Support</option>
+          <option value="ai-workflows">AI-Assisted Workflows</option>
+          <option value="marketing-ops">Marketing Operations</option>
+          <option value="exec-assist">Executive Assistance</option>
+          <option value="admin-support">Administrative Support</option>
+        </select>
+        <button class="search-btn" onclick="handleSearch()">Search Roles</button>
+      </div>
+
+      <div class="hero-pills">
+        <a href="#" class="hero-pill" onclick="filterByCategory('remote-ops', event)">Remote Operations</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('client-support', event)">Client Support</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('ai-workflows', event)">AI-Assisted</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('marketing-ops', event)">Marketing Ops</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('exec-assist', event)">Executive Support</a>
+        <a href="#" class="hero-pill" onclick="filterByCategory('admin-support', event)">Administrative</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value" id="live-job-count">—</div>
+          <div class="stat-label">Live Roles</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">200</div>
+          <div class="stat-label">Seat Facility</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">Dual ISP</div>
+          <div class="stat-label">Redundancy</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">0 min</div>
+          <div class="stat-label">Avg Downtime</div>
+        </div>
+        <div class="stat-item" style="padding-left:32px">
+          <div class="stat-value">TESDA</div>
+          <div class="stat-label">Accredited</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSYSTEM ARCHITECTURE -->
+  <section class="eco-section" id="about">
+    <div class="page">
+      <div class="section-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="6" cy="6" r="2" fill="currentColor"/>
+        </svg>
+        Ecosystem Architecture
+      </div>
+      <h2 class="section-heading">One operational infrastructure.<br>Three coordinated layers.</h2>
+      <p class="section-sub">The RankFixer ecosystem is not a jobs board with branding. It is a structured workforce intelligence system where each layer informs and reinforces the others.</p>
+
+      <div class="eco-grid">
+        <!-- Layer 1 - Current -->
+        <div class="eco-card current">
+          <div class="eco-card-current-badge">Current Layer</div>
+          <div class="eco-card-num">01</div>
+          <div class="eco-card-layer">Sense</div>
+          <div class="eco-card-title">jobs.rankfixer.co</div>
+          <div class="eco-card-desc">Labor market telemetry. Every role here is a live demand signal — not a scraped aggregate. Hiring trends, skill emergence, and workforce intelligence in real time.</div>
+          <div class="eco-card-signals">
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Demand signal tracking</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Hiring velocity intelligence</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Operational pathway curation</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Skill requirement mapping</div>
+          </div>
+          <a href="https://jobs.rankfixer.co" class="eco-card-link">
+            You are here
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7m-3-3 3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- Layer 2 -->
+        <div class="eco-card">
+          <div class="eco-card-num">02</div>
+          <div class="eco-card-layer">Adapt</div>
+          <div class="eco-card-title">ops.rankfixer.co</div>
+          <div class="eco-card-desc">Workforce preparation infrastructure. AI-assisted SOPs, operational training, workflow systems, and continuity standards — calibrated against live market demand.</div>
+          <div class="eco-card-signals">
+            <div class="eco-signal"><div class="eco-signal-dot"></div>AI-assisted SOP development</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Operational training systems</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Workflow standards</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Continuity protocols</div>
+          </div>
+          <a href="https://ops.rankfixer.co" class="eco-card-link">
+            Coming Soon
+          </a>
+        </div>
+
+        <!-- Layer 3 -->
+        <div class="eco-card">
+          <div class="eco-card-num">03</div>
+          <div class="eco-card-layer">Deploy</div>
+          <div class="eco-card-title">rankfixer.co</div>
+          <div class="eco-card-desc">Managed staffing and operational deployment. 200-seat TESDA-accredited facility with on-site management, redundant infrastructure, and professional oversight.</div>
+          <div class="eco-card-signals">
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Managed operational teams</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Facility-based infrastructure</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>On-site oversight</div>
+            <div class="eco-signal"><div class="eco-signal-dot"></div>Business continuity</div>
+          </div>
+          <a href="https://rankfixer.co" class="eco-card-link">
+            Visit Deploy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONAL PATHWAYS -->
+  <section class="pathways-section" id="pathways">
+    <div class="page">
+      <div class="pathways-header">
+        <div>
+          <div class="section-tag">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L6 1l5 10H1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            Curated Operational Pathways
+          </div>
+          <h2 class="section-heading" style="margin-bottom:0">Structured roles by function.</h2>
+        </div>
+        <a href="#opportunities" class="view-all-link">View all opportunities →</a>
+      </div>
+
+      <div class="pathways-grid">
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('remote-ops', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="12" rx="2" stroke="#0A3D2E" stroke-width="1.4"/><path d="M6 15v2M12 15v2M4 17h10" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/><path d="M5 8h8M5 11h5" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pathway-title">Remote Operations</div>
+          <div class="pathway-desc">Workflow coordination, operational administration, and process management within structured team environments.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('client-support', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C5.13 2 2 5.13 2 9c0 1.55.47 3 1.27 4.21L2 16l2.79-1.27A6.95 6.95 0 0 0 9 16c3.87 0 7-3.13 7-7s-3.13-7-7-7z" stroke="#0A3D2E" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">Client Support</div>
+          <div class="pathway-desc">Structured communication roles with managed SLAs, documented escalation paths, and continuity standards.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('ai-workflows', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#0A3D2E" stroke-width="1.4"/><path d="M6 9l2 2 4-4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">AI-Assisted Workflows</div>
+          <div class="pathway-desc">Roles operating within AI-integrated systems — ChatGPT, Claude, Zapier — with structured training and operational oversight.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('marketing-ops', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 13L7 9l3 3 5-7" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">Marketing Operations</div>
+          <div class="pathway-desc">Content strategy, campaign coordination, social systems, and performance tracking within structured marketing workflows.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('exec-assist', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="2" width="12" height="14" rx="2" stroke="#0A3D2E" stroke-width="1.4"/><path d="M6 6h6M6 9h6M6 12h4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pathway-title">Executive Assistance</div>
+          <div class="pathway-desc">High-trust administrative support for principals — calendar, correspondence, research, and operational coordination.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+
+        <a href="#opportunities" class="pathway-card" onclick="filterByCategory('admin-support', event)">
+          <div class="pathway-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4h10v2H4zM4 8h10v2H4zM4 12h6v2H4z" stroke="#0A3D2E" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pathway-title">Administrative Support</div>
+          <div class="pathway-desc">Data management, process administration, documentation, and operational support functions within managed team structures.</div>
+          <div class="pathway-count">Active pathway</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTELLIGENCE METRICS -->
+  <div class="intelligence-strip">
+    <div class="page">
+      <div class="intel-grid">
+        <div class="intel-item">
+          <div class="intel-num">Live</div>
+          <div class="intel-label">Demand signal tracking</div>
+          <div class="intel-sub">Roles updated in real time</div>
+        </div>
+        <div class="intel-item">
+          <div class="intel-num">200</div>
+          <div class="intel-label">Seat facility capacity</div>
+          <div class="intel-sub">Bislig City, Philippines</div>
+        </div>
+        <div class="intel-item">
+          <div class="intel-num">2×</div>
+          <div class="intel-label">ISP redundancy standard</div>
+          <div class="intel-sub">Dual fiber, auto-failover</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPPORTUNITIES -->
+  <section class="opps-section" id="opportunities">
+    <div class="page">
+      <div class="opps-header">
+        <div>
+          <div class="section-tag">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="6" r="1.5" fill="currentColor"/></svg>
+            Current Opportunities
+          </div>
+          <h2 class="section-heading" style="margin-bottom:0;font-size:24px">Structured operational roles</h2>
+        </div>
+        <div class="opps-filters">
+          <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+          <button class="filter-btn" onclick="setFilter('remote-ops', this)">Remote Ops</button>
+          <button class="filter-btn" onclick="setFilter('client-support', this)">Client Support</button>
+          <button class="filter-btn" onclick="setFilter('ai-workflows', this)">AI Workflows</button>
+          <button class="filter-btn" onclick="setFilter('marketing-ops', this)">Marketing</button>
+        </div>
+      </div>
+
+      <!-- Loading state -->
+      <div id="jobs-loading" style="padding:48px 0;text-align:center;color:var(--ink-muted);font-family:var(--ff-mono);font-size:13px;letter-spacing:0.04em;">
+        Loading roles…
+      </div>
+
+      <!-- Error state -->
+      <div id="jobs-error" style="display:none;padding:48px 0;text-align:center;">
+        <div style="font-size:14px;color:var(--danger);margin-bottom:8px;">Unable to load roles</div>
+        <div style="font-size:13px;color:var(--ink-muted);">Please try again in a moment.</div>
+        <button onclick="fetchJobs()" style="margin-top:16px;padding:8px 18px;background:var(--ink);color:#fff;border:none;border-radius:var(--r-sm);cursor:pointer;font-size:13px;font-family:var(--ff-body);">Retry</button>
+      </div>
+
+      <!-- Empty state -->
+      <div id="jobs-empty" style="display:none;padding:48px 0;text-align:center;">
+        <div style="font-size:14px;color:var(--ink-soft);margin-bottom:6px;">No roles match your search</div>
+        <div style="font-size:13px;color:var(--ink-muted);">Try a different keyword or clear filters.</div>
+      </div>
+
+      <div class="opps-grid" id="jobs-grid" style="display:none"></div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination" style="display:none">
+        <div class="pagination-info" id="pagination-info"></div>
+        <div class="pagination-btns" id="pagination-btns"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRASTRUCTURE TRUST SECTION -->
+  <section class="trust-section" id="infrastructure">
+    <div class="page">
+      <div class="trust-grid">
+        <div>
+          <div class="section-tag">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 4v4l5 3 5-3V4L6 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            Why This Ecosystem
+          </div>
+          <h2 class="section-heading">Infrastructure that isolated freelancing cannot provide.</h2>
+          <p class="section-sub">Joining a role in the RankFixer ecosystem means operating within a professionally managed environment — not a home office without support, accountability, or continuity.</p>
+          <a href="https://rankfixer.co" class="btn-primary" style="margin-top:8px;width:fit-content">
+            Learn About the Facility →
+          </a>
+        </div>
+
+        <div class="trust-features">
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#0A3D2E" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">200-Seat TESDA-Accredited Facility</div>
+              <div class="trust-feature-desc">A physical operational center in Bislig City with structured training, on-site management, and professional working environment — not isolated home offices.</div>
+            </div>
+          </div>
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">Dual ISP + Generator Redundancy</div>
+              <div class="trust-feature-desc">Two independent fiber connections with automatic failover. A backup generator bridges any power interruption. Zero downtime is not a promise — it is engineered infrastructure.</div>
+            </div>
+          </div>
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="2.5" stroke="#0A3D2E" stroke-width="1.4"/><path d="M3 13c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">On-Site Management and Accountability</div>
+              <div class="trust-feature-desc">Every team operates under structured on-site oversight. Attendance, productivity, and output quality are managed — not self-reported.</div>
+            </div>
+          </div>
+          <div class="trust-feature">
+            <div class="trust-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="#0A3D2E" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="#0A3D2E" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="trust-feature-title">AI-Integrated Operational Training</div>
+              <div class="trust-feature-desc">Every role operates within AI-integrated workflows as standard practice. Training is structured, accredited, and continuously updated against market demand.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">RankFixer Talent</div>
+        <div class="footer-brand-desc">
+          Part of the RankFixer operational ecosystem — workforce intelligence, structured preparation, and professionally managed remote teams.
+        </div>
+        <div class="footer-eco-links">
+          <a href="https://jobs.rankfixer.co" class="footer-eco-link">
+            <span class="footer-eco-dot active"></span>
+            Sense — jobs.rankfixer.co
+          </a>
+          <a href="https://ops.rankfixer.co" class="footer-eco-link">
+            <span class="footer-eco-dot inactive"></span>
+            Adapt — ops.rankfixer.co
+          </a>
+          <a href="https://rankfixer.co" class="footer-eco-link">
+            <span class="footer-eco-dot inactive"></span>
+            Deploy — rankfixer.co
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Opportunities</div>
+        <div class="footer-links">
+          <a href="#opportunities" class="footer-link">Browse All Roles</a>
+          <a href="#" class="footer-link">Remote Operations</a>
+          <a href="#" class="footer-link">Client Support</a>
+          <a href="#" class="footer-link">AI-Assisted Workflows</a>
+          <a href="#" class="footer-link">Marketing Operations</a>
+          <a href="#" class="footer-link">Executive Assistance</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Network</div>
+        <div class="footer-links">
+          <a href="#signup" class="footer-link">Join the Network</a>
+          <a href="#signin" class="footer-link">Sign In</a>
+          <a href="#" class="footer-link">Post a Role</a>
+          <a href="#" class="footer-link">Employer Dashboard</a>
+          <a href="https://rankfixer.co/about.html" class="footer-link">About RankFixer</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@rankfixer.co" class="footer-link">info@rankfixer.co</a>
+          <a href="https://rankfixer.co/contact.html" class="footer-link">Book a Consultation</a>
+          <a href="https://rankfixer.co" class="footer-link">Managed Staffing</a>
+        </div>
+        <div style="margin-top:20px;font-family:var(--ff-mono);font-size:11.5px;color:rgba(255,255,255,0.3);">
+          Response within 1 business day<br>
+          Philippines (PHT, UTC+8)
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&#169; 2026 RankFixer. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────────────────────────
+const API = 'https://jobcopilotph.vercel.app';
+const LIMIT = 10;
+
+// ── STATE ─────────────────────────────────────────────────────────────────
+let state = {
+  keyword: '',
+  remote: null,   // true | null
+  page: 1,
+  total: 0,
+  activeFilter: 'all'
+};
+
+// ── UTILS ─────────────────────────────────────────────────────────────────
+function fmtSalary(min, max, currency) {
+  if (!min && !max) return null;
+  const sym = currency === 'PHP' ? '₱' : (currency || '');
+  const fmt = n => n >= 1000 ? sym + (n / 1000).toFixed(0) + 'k' : sym + n;
+  if (min && max) return fmt(min) + '–' + fmt(max);
+  return fmt(min || max);
+}
+
+function locationLabel(job) {
+  if (job.remote_type === 'remote') return 'Remote';
+  if (job.city) return job.city;
+  return 'On-site';
+}
+
+function daysAgo(dateStr) {
+  if (!dateStr) return '';
+  const diff = Math.floor((Date.now() - new Date(dateStr)) / 86400000);
+  if (diff === 0) return 'Today';
+  if (diff === 1) return 'Yesterday';
+  if (diff < 7) return diff + 'd ago';
+  if (diff < 30) return Math.floor(diff / 7) + 'w ago';
+  return Math.floor(diff / 30) + 'mo ago';
+}
+
+function categoryFromJob(job) {
+  const t = (job.title || '').toLowerCase();
+  const c = (job.category || '').toLowerCase();
+  if (t.includes('ai') || t.includes('automation') || c.includes('ai')) return 'ai-workflows';
+  if (t.includes('market')) return 'marketing-ops';
+  if (t.includes('exec') || t.includes('assistant') || t.includes('va')) return 'exec-assist';
+  if (t.includes('support') || t.includes('customer') || t.includes('client')) return 'client-support';
+  if (t.includes('admin')) return 'admin-support';
+  return 'remote-ops';
+}
+
+const iconLocation = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.01 1 2 3.01 2 5.5c0 3.37 4.5 7.5 4.5 7.5S11 8.87 11 5.5C11 3.01 8.99 1 6.5 1z" stroke="currentColor" stroke-width="1.2"/><circle cx="6.5" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>`;
+const iconClock   = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 4v3l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+const iconCal     = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 5.5h10M4.5 1.5v2M8.5 1.5v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+
+// ── RENDER JOB CARD ───────────────────────────────────────────────────────
+function renderCard(job) {
+  const salary = fmtSalary(job.salary_min, job.salary_max, job.salary_currency || 'PHP');
+  const cat = categoryFromJob(job);
+  const isRemote = job.remote_type === 'remote';
+  const posted = daysAgo(job.posted_at || job.created_at);
+  const empType = job.employment_type
+    ? job.employment_type.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+    : 'Full-time';
+
+  const badges = [];
+  badges.push(`<span class="badge badge-operational">Operational Role</span>`);
+  if (isRemote) badges.push(`<span class="badge badge-remote">Remote</span>`);
+  if ((job.title || '').toLowerCase().includes('ai') || (job.category || '').toLowerCase().includes('ai'))
+    badges.push(`<span class="badge badge-ai">AI-Integrated</span>`);
+  badges.push(`<span class="badge badge-type">${empType}</span>`);
+
+  return `
+  <article class="job-card" data-category="${cat}" data-id="${job.id}">
+    <div class="job-card-main">
+      <div class="job-card-company">
+        ${job.company || 'RankFixer Ops'}
+        <span style="color:var(--border);font-size:14px">·</span>
+        ${locationLabel(job)}
+      </div>
+      <h3 class="job-card-title">${job.title || 'Untitled Role'}</h3>
+      <div class="job-card-meta">
+        <span class="job-meta-item">${iconLocation} ${locationLabel(job)}</span>
+        <span class="job-meta-item">${iconClock} ${empType}</span>
+        ${posted ? `<span class="job-meta-item">${iconCal} ${posted}</span>` : ''}
+      </div>
+      <div class="job-badges">${badges.join('')}</div>
+    </div>
+    <div class="job-card-actions">
+      ${salary ? `<div><div class="job-salary">${salary}</div><div class="job-salary-label">per month</div></div>` : '<div></div>'}
+      <a href="https://jobcopilotph.vercel.app/jobs/${job.id}" target="_blank" rel="noopener" class="btn-view">View Role →</a>
+    </div>
+  </article>`;
+}
+
+// ── FETCH JOBS ────────────────────────────────────────────────────────────
+async function fetchJobs() {
+  const grid    = document.getElementById('jobs-grid');
+  const loading = document.getElementById('jobs-loading');
+  const error   = document.getElementById('jobs-error');
+  const empty   = document.getElementById('jobs-empty');
+  const pgWrap  = document.getElementById('pagination');
+
+  grid.style.display = 'none';
+  loading.style.display = 'block';
+  error.style.display = 'none';
+  empty.style.display = 'none';
+  pgWrap.style.display = 'none';
+
+  const params = new URLSearchParams({
+    page: state.page,
+    limit: LIMIT,
+    ...(state.keyword ? { keyword: state.keyword } : {}),
+    ...(state.remote   ? { remote: 'true' }        : {})
+  });
+
+  try {
+    const res = await fetch(`${API}/api/jobs?${params}`);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+
+    loading.style.display = 'none';
+
+    const jobs = json.data || [];
+    state.total = json.pagination?.total || 0;
+
+    // client-side category filter
+    const filtered = state.activeFilter === 'all'
+      ? jobs
+      : jobs.filter(j => categoryFromJob(j) === state.activeFilter);
+
+    if (filtered.length === 0) {
+      empty.style.display = 'block';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(renderCard).join('');
+    grid.style.display = 'block';
+    renderPagination(json.pagination);
+
+  } catch (err) {
+    loading.style.display = 'none';
+    error.style.display = 'block';
+    console.error('Jobs fetch failed:', err);
+  }
+}
+
+// ── PAGINATION ────────────────────────────────────────────────────────────
+function renderPagination(pg) {
+  if (!pg || pg.total <= LIMIT) return;
+  const totalPages = Math.ceil(pg.total / LIMIT);
+  const info = document.getElementById('pagination-info');
+  const btns = document.getElementById('pagination-btns');
+  const wrap = document.getElementById('pagination');
+
+  const start = (pg.page - 1) * pg.limit + 1;
+  const end   = Math.min(pg.page * pg.limit, pg.total);
+  info.textContent = `Showing ${start}–${end} of ${pg.total} roles`;
+
+  const pages = [];
+  pages.push(`<button class="page-btn" onclick="goPage(${pg.page - 1})" ${pg.page === 1 ? 'disabled style="opacity:.4;cursor:default"' : ''}>←</button>`);
+
+  // show at most 5 page numbers around current
+  let startP = Math.max(1, pg.page - 2);
+  let endP   = Math.min(totalPages, startP + 4);
+  startP = Math.max(1, endP - 4);
+
+  for (let p = startP; p <= endP; p++) {
+    pages.push(`<button class="page-btn ${p === pg.page ? 'active' : ''}" onclick="goPage(${p})">${p}</button>`);
+  }
+  pages.push(`<button class="page-btn" onclick="goPage(${pg.page + 1})" ${pg.page >= totalPages ? 'disabled style="opacity:.4;cursor:default"' : ''}>→</button>`);
+
+  btns.innerHTML = pages.join('');
+  wrap.style.display = 'flex';
+}
+
+function goPage(p) {
+  if (p < 1) return;
+  state.page = p;
+  document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  fetchJobs();
+}
+
+// ── STATS ─────────────────────────────────────────────────────────────────
+async function loadStats() {
+  try {
+    const res = await fetch(`${API}/api/stats`);
+    const json = await res.json();
+    if (!json.success) return;
+    const el = document.getElementById('live-job-count');
+    if (el && json.data.totalJobs) {
+      el.textContent = json.data.totalJobs.toLocaleString() + '+';
+    }
+  } catch (_) {}
+}
+
+// ── SEARCH ────────────────────────────────────────────────────────────────
+function handleSearch() {
+  const q   = document.getElementById('hero-search-input').value.trim();
+  const cat = document.getElementById('hero-search-category')?.value || '';
+  state.keyword = q;
+  state.page = 1;
+  if (cat) {
+    state.activeFilter = cat;
+    syncFilterBtns(cat);
+  }
+  document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  fetchJobs();
+}
+
+function filterByCategory(cat, e) {
+  if (e) e.preventDefault();
+  state.activeFilter = cat;
+  state.page = 1;
+  syncFilterBtns(cat);
+  document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  fetchJobs();
+}
+
+function setFilter(cat, btn) {
+  state.activeFilter = cat;
+  state.page = 1;
+  syncFilterBtns(cat);
+  fetchJobs();
+}
+
+function syncFilterBtns(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('onclick')?.includes("'" + cat + "'") || (cat === 'all' && b.getAttribute('onclick')?.includes("'all'")));
+  });
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+document.getElementById('hero-search-input').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') handleSearch();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchJobs();
+  loadStats();
+});
+</script>
+</body>
+</html>
